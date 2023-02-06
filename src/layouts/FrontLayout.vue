@@ -11,30 +11,32 @@
           <q-btn flat to="/" class="text-white">
             首頁
           </q-btn>
-          <q-btn flat to="/BlogAll" class="text-white">
+          <q-btn flat to="" class="text-white">
             關於我們
           </q-btn>
-          <q-btn flat to="/ToursAll" class="text-white">
+          <q-btn flat to="" class="text-white">
             餐點介紹
           </q-btn>
-          <q-btn flat to="/TransportAll" class="text-white">
+          <q-btn flat to="" class="text-white">
             線上訂位
           </q-btn>
-          <q-btn flat to="/Top10" class="text-white">
+          <q-btn flat to="" class="text-white" icon="email">
             購物車
+            <q-badge color="red" floating></q-badge>
           </q-btn>
-          <q-btn flat to="/ActivitiesAll" class="text-white">
+          <q-btn v-if="isLogin" flat to="" class="text-white">
             會員中心
+          </q-btn>
+          <q-btn v-if="isLogin && isAdmin" flat to="" class="text-white">
+            管理
           </q-btn>
         </div>
 
         <q-space />
         <div class="q-pl-sm q-gutter-sm row items-center no-wrap">
-
-          <!-- <q-btn flat v-if="isLogin && isAdmin" to="/admin" label="admin" class="admin"/>
-          <q-btn flat v-if="isLogin" to="/cart" icon="shopping_cart" class="shoppingCart"/> -->
-          <q-btn flat to="/login" name="login" label="登入" class="login"/>
-          <q-btn flat to="/register" name="register" label="註冊" class="login"/>
+          <q-btn class="login" v-if="!isLogin" flat to="/login" name="login" label="登入" icon="person_add_alt" />
+          <q-btn class="register" v-if="!isLogin" flat to="/register" name="register" label="註冊" icon="login"/>
+          <q-btn class="logout" flat to="/register" name="logout" label="登出" icon="logout"/>
         </div>
 
       </q-toolbar>
@@ -94,5 +96,11 @@
 
 <script setup>
 import { ref } from 'vue'
+import { storeToRefs } from 'pinia'
+import { useUserStore } from 'src/stores/user'
+const user = useUserStore()
+const { isLogin, isAdmin } = storeToRefs(user)
+// const { logout } = user
 const drawerOpen = ref(false)
+
 </script>
