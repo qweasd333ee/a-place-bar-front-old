@@ -1,7 +1,8 @@
 import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
-import { api } from '../boot/axios'
+import { api, apiAuth } from '../boot/axios.js'
 import Swal from 'sweetalert2'
+import { LocalStorage } from 'quasar'
 
 export const useUserStore = defineStore('user', () => {
   const token = ref('')
@@ -43,6 +44,41 @@ export const useUserStore = defineStore('user', () => {
     }
   }
 
+  async function logout () {
+    try {
+      await apiAuth.delete('/users/logout')
+      token.value = ''
+      account.value = ''
+      role.value = 0
+      CartProduct.value = 0
+      this.router.push('/')
+      Swal.fire({
+        icon: 'success',
+        title: '成功',
+        text: '登出成功'
+      })
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: '失敗',
+        text: error?.response?.data?.message || '發生錯誤'
+      })
+    }
+  }
+
+  async function getUser () {
+    if (token.value.length === 0) return
+    try {
+      const { data } = await apiAuth.get('/users/me')
+      account.value = data.result.account
+      email.value = data.result.email
+      CartProduct.value = data.result.CartProduct
+      role.value = data.result.role
+    } catch (error) {
+      logout()
+    }
+  }
+
   return {
     token,
     account,
@@ -50,8 +86,19 @@ export const useUserStore = defineStore('user', () => {
     CartProduct,
     role,
     login,
+    logout,
     isLogin,
     isAdmin,
-    avatar
+    avatar,
+    getUser
+  }
+}, {
+  persist: {
+    key: 'a-place-bar',
+    paths: ['token'],
+    storage: {
+      getItem: (key) => LocalStorage.getItem(key),
+      setItem: (key, value) => LocalStorage.set(key, value)
+    }
   }
 })

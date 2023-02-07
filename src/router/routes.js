@@ -5,9 +5,12 @@ const routes = [
     children: [
       {
         path: '',
+        name: 'home',
         component: () => import('pages/front/HomeView.vue'),
         meta: {
-          title: '一個地方'
+          title: '一個地方',
+          login: false,
+          admin: false
         }
       },
       {
@@ -63,8 +66,29 @@ const routes = [
     ]
   },
   {
+    path: '/admin',
+    component: () => import('../layouts/AdminLayout.vue'),
+    children: [
+      {
+        path: '',
+        name: 'admin-home',
+        component: () => import('../pages/admin/HomeView.vue'),
+        meta: {
+          title: '一個地方 | 管理',
+          login: true,
+          admin: true
+        }
+      }
+    ]
+  },
+  {
     path: '/:catchAll(.*)*',
-    component: () => import('pages/ErrorNotFound.vue')
+    component: () => import('pages/ErrorNotFound.vue'),
+    meta: {
+      title: '一個地方 | 404',
+      login: false,
+      admin: false
+    }
   }
 ]
 

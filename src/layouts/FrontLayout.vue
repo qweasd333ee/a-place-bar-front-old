@@ -1,42 +1,40 @@
 <template>
-  <q-layout view="hHh Lpr lff" id="main-layout">
-    <q-header elevated class="text-white">
+  <q-layout id="front-layout" view="hHh Lpr lff">
+    <q-header elevated >
       <q-toolbar>
-        <q-btn class="menu" v-if="$q.screen.lt.md" dense flat round icon="menu" @click="drawerOpen = !drawerOpen"/>
+        <q-btn class="menu" v-if="$q.screen.lt.md" dense flat round icon="menu" @click="drawer = !drawer"/>
         <q-toolbar-title>
           <router-link to="/">一個地方</router-link>
         </q-toolbar-title>
 
         <div v-if="$q.screen.gt.sm" class="GL__toolbar-link q-ml-xs q-gutter-md text-body2 text-weight-bold row items-center no-wrap">
-          <q-btn flat to="/" class="text-white">
+          <q-btn flat to="/">
             首頁
           </q-btn>
-          <q-btn flat to="" class="text-white">
+          <q-btn flat to="">
             關於我們
           </q-btn>
-          <q-btn flat to="" class="text-white">
+          <q-btn flat to="">
             餐點介紹
           </q-btn>
-          <q-btn flat to="" class="text-white">
+          <q-btn flat to="">
             線上訂位
           </q-btn>
-          <q-btn flat to="" class="text-white" icon="email">
-            購物車
-            <q-badge color="red" floating></q-badge>
-          </q-btn>
-          <q-btn v-if="isLogin" flat to="" class="text-white">
+          <q-btn v-if="isLogin" flat to="">
             會員中心
-          </q-btn>
-          <q-btn v-if="isLogin && isAdmin" flat to="" class="text-white">
-            管理
           </q-btn>
         </div>
 
         <q-space />
         <div class="q-pl-sm q-gutter-sm row items-center no-wrap">
-          <q-btn class="login" v-if="!isLogin" flat to="/login" name="login" label="登入" icon="person_add_alt" />
-          <q-btn class="register" v-if="!isLogin" flat to="/register" name="register" label="註冊" icon="login"/>
-          <q-btn class="logout" flat to="/register" name="logout" label="登出" icon="logout"/>
+          <q-btn class="register" v-if="!isLogin" flat to="/register" name="註冊" label="註冊"/>
+          <q-btn class="login" v-if="!isLogin" flat to="/login" name="登入" label="登入" />
+          <q-btn class="admin" v-if="isLogin && isAdmin" flat to="/admin" name="註冊" label="管理" />
+          <q-btn class="CartProduct" v-if="isLogin" flat to="/CartProduct" name="CartProduct" label="購物車">
+            <q-badge color="red" rounded floating :label="CartProduct.value"></q-badge>
+          </q-btn>
+          <q-btn class="orders" v-if="isLogin" flat to="/orders" name="login" label="訂單" />
+          <q-btn class="logout" v-if="isLogin" flat @click="logout" name="logout" label="登出"/>
         </div>
 
       </q-toolbar>
@@ -44,7 +42,8 @@
     </q-header>
 
     <q-drawer
-        v-model="drawerOpen"
+        v-if="$q.screen.lt.md"
+        v-model="drawer"
         show-if-above
         :width="200"
         bordered
@@ -99,8 +98,8 @@ import { ref } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useUserStore } from 'src/stores/user'
 const user = useUserStore()
-const { isLogin, isAdmin } = storeToRefs(user)
-// const { logout } = user
-const drawerOpen = ref(false)
+const { isLogin, isAdmin, CartProduct } = storeToRefs(user)
+const { logout } = user
+const drawer = ref(false)
 
 </script>
