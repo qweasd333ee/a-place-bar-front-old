@@ -2,7 +2,7 @@
   <q-layout id="admin-layout" view="hHh Lpr lff">
     <q-header elevated>
       <q-toolbar>
-        <q-btn flat @click="drawer = !drawer" round dense icon="menu" />
+        <q-btn dense flat round icon="menu" @click="drawer = !drawer" />
         <q-toolbar-title>一個地方</q-toolbar-title>
       </q-toolbar>
     </q-header>
@@ -11,7 +11,6 @@
       v-model="drawer"
       show-if-above
       :width="200"
-      :breakpoint="500"
       bordered
       class="bg-grey-3"
     >
@@ -30,7 +29,7 @@
             </q-item-section>
             <q-item-section>餐點管理</q-item-section>
           </q-item>
-          <q-item active clickable v-ripple to="/admin/orders">
+          <q-item clickable v-ripple to="/admin/orders">
             <q-item-section avatar>
               <q-icon name="list_alt" />
             </q-item-section>

@@ -1,7 +1,7 @@
 <template>
-  <q-layout view="hHr LpR lFf" style="width: 100%; height: 100vh;">
-    <div>
+  <q-page>
+    <h5 class="text-center">
       請選擇管理項目
-    </div>
-  </q-layout>
+    </h5>
+  </q-page>
 </template>
