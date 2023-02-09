@@ -14,7 +14,7 @@
           <q-btn flat to="">
             關於我們
           </q-btn>
-          <q-btn flat to="">
+          <q-btn flat to="/product">
             餐點介紹
           </q-btn>
           <q-btn flat to="">
@@ -61,7 +61,7 @@
               關於我們
             </q-item-section>
           </q-item>
-          <q-item clickable v-ripple to="">
+          <q-item clickable v-ripple to="/product">
             <q-item-section>
               餐點介紹
             </q-item-section>

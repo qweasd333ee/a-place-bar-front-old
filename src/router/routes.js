@@ -34,11 +34,21 @@ const routes = [
         }
       },
       {
-        path: 'products/:id',
+        path: 'product',
         name: 'product',
-        component: () => import('pages/front/ProductView.vue'),
+        component: () => import('pages/front/AllProduct.vue'),
         meta: {
-          title: '一個地方 | 商品',
+          title: '一個地方 | 餐點介紹',
+          login: false,
+          admin: false
+        }
+      },
+      {
+        path: 'products/:id',
+        name: 'OneProduct',
+        component: () => import('pages/front/OneProduct.vue'),
+        meta: {
+          title: '一個地方 | 餐點',
           login: false,
           admin: false
         }
