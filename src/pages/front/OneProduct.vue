@@ -1,29 +1,26 @@
-<template lang="pug">
-#product
-  v-row
-    v-col(cols="12")
-      h1.text-center {{ product.name }}
-    v-divider
-    v-col(cols="12")
-      v-img(:src="product.image")
-    v-col(cols="12")
-      p ${{ product.price }}
-      p.pre {{ product.description }}
-    v-col(cols="12")
-      v-form(v-model="valid" @submit.prevent="submitCart")
-        v-text-field(v-model.number="quantity" type="number" label="數量" :rules="[rules.required, rulesnumber]")
-        v-btn(type="submit" color="primary") 加入購物車
-  v-overlay.align-center.justify-center.text-center(:model-value="!product.sell" persistent)
-    h1.text-red 已下架
-    v-btn(@click="router.go(-1)") 回上頁
+<template>
+  <div id="product">
+    <q-card class="q-pa-xl">
+      <q-card-section class="text-center">
+        <q-img :src="product.image" :ratio="1" fit="cover"/>
+        <h5>{{ product.name }}</h5>
+        <p>${{ product.price }}</p>
+        <p>{{ product.description }}</p>
+        <q-form v-model="valid" @submit="submitCart">
+          <q-input v-model.number="quantity" label="數量" :rules="[rules.required, rules.number]" />
+          <q-btn label="加入購物車" type="submit" color="primary"/>
+        </q-form>
+      </q-card-section>
+    </q-card>
+  </div>
 </template>
 
 <script setup>
 import { reactive, ref } from 'vue'
-import { api } from '@/plugins/axios'
 import { useRoute, useRouter } from 'vue-router'
+import { api } from 'src/boot/axios'
 import { Swal } from 'sweetalert2'
-import { useUserStore } from '@/stores/user'
+import { useUserStore } from 'src/stores/user'
 
 const route = useRoute()
 const router = useRouter()
@@ -32,6 +29,7 @@ const user = useUserStore()
 const { editCart } = user
 
 const valid = ref(false)
+
 const quantity = ref(0)
 
 const rules = {
@@ -54,11 +52,12 @@ const product = reactive({
 })
 
 const submitCart = () => {
-  if (!valid.value) return
+  // console.log(valid.value)
+  // if (!valid.value) return
   editCart({ _id: product._id, quantity: quantity.value })
 }
 
-(async () => {
+(async function () {
   try {
     const { data } = await api.get('/products/' + route.params.id)
     product._id = data.result._id

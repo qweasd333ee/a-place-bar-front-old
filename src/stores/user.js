@@ -79,6 +79,51 @@ export const useUserStore = defineStore('user', () => {
     }
   }
 
+  async function editCart ({ _id, quantity }) {
+    if (token.value.length === 0) {
+      Swal.fire({
+        icon: 'error',
+        title: '失敗',
+        text: '請先登入'
+      })
+      this.router.push('/login')
+      return
+    }
+    try {
+      const { data } = await apiAuth.post('/users/CartProduct', { p_id: _id, quantity: parseInt(quantity) })
+      CartProduct.value = data.result
+      Swal.fire({
+        icon: 'success',
+        title: '成功',
+        text: '加入購物車成功'
+      })
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: '失敗',
+        text: error?.response?.data?.message || '發生錯誤'
+      })
+    }
+  }
+
+  const checkout = async () => {
+    try {
+      await apiAuth.post('/orders')
+      CartProduct.value = 0
+      Swal.fire({
+        icon: 'success',
+        title: '成功',
+        text: '結帳成功'
+      })
+    } catch (error) {
+      Swal.fire({
+        icon: 'error',
+        title: '失敗',
+        text: error?.response?.data?.message || '發生錯誤'
+      })
+    }
+  }
+
   return {
     token,
     account,
@@ -90,7 +135,9 @@ export const useUserStore = defineStore('user', () => {
     isLogin,
     isAdmin,
     avatar,
-    getUser
+    getUser,
+    editCart,
+    checkout
   }
 }, {
   persist: {

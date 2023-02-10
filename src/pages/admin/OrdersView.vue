@@ -8,6 +8,7 @@
             <tr>
               <th>ID</th>
               <th>日期</th>
+              <th>使用者</th>
               <th>金額</th>
               <th>商品</th>
             </tr>
@@ -16,6 +17,7 @@
             <tr v-for="order in orders" :key="order._id">
               <td>{{ order._id }}</td>
               <td>{{ new Date(order.date).toLocaleDateString() }}</td>
+              <td>{{ order.u_id.account }}</td>
               <td>{{ order.totalPrice }}</td>
               <td>
                 <div v-for="product in order.products" :key="product._id">
@@ -39,7 +41,7 @@ const orders = reactive([]);
 
 (async () => {
   try {
-    const { data } = await apiAuth.get('/orders')
+    const { data } = await apiAuth.get('/orders/all')
     orders.push(...data.result.map(order => {
       order.totalPrice = order.products.reduce((total, current) => total + current.p_id.price * current.quantity, 0)
       return order

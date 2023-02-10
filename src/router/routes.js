@@ -54,8 +54,8 @@ const routes = [
         }
       },
       {
-        path: 'cart',
-        name: 'cart',
+        path: 'CartProduct',
+        name: 'CartProduct',
         component: () => import('pages/front/CartView.vue'),
         meta: {
           title: '一個地方 | 購物車',
@@ -95,6 +95,16 @@ const routes = [
         component: () => import('../pages/admin/ProductsView.vue'),
         meta: {
           title: '一個地方 | 餐點管理',
+          login: true,
+          admin: true
+        }
+      },
+      {
+        path: 'orders',
+        name: 'admin-orders',
+        component: () => import('../pages/admin/OrdersView.vue'),
+        meta: {
+          title: '一個地方 | 訂單管理',
           login: true,
           admin: true
         }

@@ -3,7 +3,9 @@
     <q-header elevated>
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="drawer = !drawer" />
-        <q-toolbar-title>一個地方</q-toolbar-title>
+        <q-toolbar-title>
+          <router-link style="text-decoration: none; color: white;" to="/">一個地方</router-link>
+        </q-toolbar-title>
       </q-toolbar>
     </q-header>
 
@@ -16,13 +18,6 @@
     >
       <q-scroll-area class="fit">
         <q-list padding style="height: calc(100% - 150px); margin-top: 150px;">
-          <q-item clickable v-ripple to="/">
-            <q-item-section avatar>
-              <q-icon name="home" />
-            </q-item-section>
-            <q-item-section>首頁</q-item-section>
-          </q-item>
-          <q-separator />
           <q-item clickable v-ripple to="/admin/products">
             <q-item-section avatar>
               <q-icon name="restaurant" />
@@ -35,13 +30,13 @@
             </q-item-section>
             <q-item-section>訂餐管理</q-item-section>
           </q-item>
-          <q-item clickable v-ripple to="/admin/seats">
+          <q-item clickable v-ripple to="">
             <q-item-section avatar>
               <q-icon name="chair" />
             </q-item-section>
             <q-item-section>座位管理</q-item-section>
           </q-item>
-          <q-item clickable v-ripple to="/admin/bookings">
+          <q-item clickable v-ripple to="">
             <q-item-section avatar>
               <q-icon name="airline_seat_recline_extra" />
             </q-item-section>

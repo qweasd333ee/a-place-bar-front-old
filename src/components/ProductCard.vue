@@ -6,13 +6,13 @@
       </q-card-section>
       <q-card-section>
         <q-item-label>
-          <router-link :to="'/products/' + _id">{{ name }}</router-link>
+          <router-link class="text-primary text-h6" style="text-decoration: none;" :to="'/products/' + _id">{{ name }}</router-link>
         </q-item-label>
         <q-item-label>
           ${{ price }}
         </q-item-label>
         <q-item-label>
-          <p pre>{{ description }}</p>
+          <p style="white-space: pre;">{{ description }}</p>
         </q-item-label>
         <q-item-label>
           <q-btn color="primary" icon="shopping_cart" label="加入購物車" @click="editCart({_id, quantity: 1})" />

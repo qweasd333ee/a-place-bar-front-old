@@ -118,17 +118,6 @@ const openDialog = (idx) => {
   form.dialog = true
 }
 
-// const rows = [
-//   {
-//     image: 456,
-//     name: '再來一杯',
-//     price: 300,
-//     description: '貝禮詩奶酒+鮮奶',
-//     categories: '奶酒',
-//     sell: 4.0
-//   }
-// ]
-
 const submit = async () => {
   // if (!form.valid) return
 
