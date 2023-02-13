@@ -30,7 +30,7 @@
             </q-item-section>
             <q-item-section>訂餐管理</q-item-section>
           </q-item>
-          <q-item clickable v-ripple to="">
+          <q-item clickable v-ripple to="/admin/seats">
             <q-item-section avatar>
               <q-icon name="chair" />
             </q-item-section>

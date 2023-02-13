@@ -14,7 +14,7 @@
           <q-btn flat to="/product">
             餐點介紹
           </q-btn>
-          <q-btn flat to="">
+          <q-btn flat to="/seat">
             線上訂位
           </q-btn>
         </div>
@@ -27,6 +27,9 @@
           <q-btn class="orders" v-if="isLogin" flat to="/orders" name="login" label="訂單" />
           <q-btn class="CartProduct" v-if="isLogin" flat to="/CartProduct" name="CartProduct" icon="shopping_cart">
             <q-badge color="red" rounded floating :label="CartProduct" />
+          </q-btn>
+          <q-btn class="CartSeat" v-if="isLogin" flat to="/CartSeat" name="CartSeat" icon="chair">
+            <q-badge color="red" rounded floating :label="CartSeat" />
           </q-btn>
           <q-btn class="logout" v-if="isLogin" flat @click="logout" name="logout" label="登出"/>
         </div>

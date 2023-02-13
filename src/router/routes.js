@@ -56,7 +56,7 @@ const routes = [
       {
         path: 'CartProduct',
         name: 'CartProduct',
-        component: () => import('pages/front/CartView.vue'),
+        component: () => import('pages/front/CartProduct.vue'),
         meta: {
           title: '一個地方 | 購物車',
           login: true,
@@ -69,6 +69,26 @@ const routes = [
         component: () => import('pages/front/OrdersView.vue'),
         meta: {
           title: '一個地方 | 訂單',
+          login: true,
+          admin: false
+        }
+      },
+      {
+        path: 'seat',
+        name: 'seat',
+        component: () => import('pages/front/AllSeat.vue'),
+        meta: {
+          title: '一個地方 | 線上訂位',
+          login: false,
+          admin: false
+        }
+      },
+      {
+        path: 'CartSeat',
+        name: 'CartSeat',
+        component: () => import('pages/front/CartSeat.vue'),
+        meta: {
+          title: '一個地方 | 購物車',
           login: true,
           admin: false
         }
@@ -105,6 +125,16 @@ const routes = [
         component: () => import('../pages/admin/OrdersView.vue'),
         meta: {
           title: '一個地方 | 訂單管理',
+          login: true,
+          admin: true
+        }
+      },
+      {
+        path: 'seats',
+        name: 'admin-seats',
+        component: () => import('../pages/admin/seatsView.vue'),
+        meta: {
+          title: '一個地方 | 座位管理',
           login: true,
           admin: true
         }

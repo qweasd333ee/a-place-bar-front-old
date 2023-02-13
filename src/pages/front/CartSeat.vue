@@ -1,6 +1,9 @@
 <template>
   <q-page class="q-pa-md">
     <div class="row">
+      <div class="col-12 text-center text-h5">
+        座位購物車
+      </div>
       <div class="col-12">
         <q-markup-table>
           <thead class="text-center">
