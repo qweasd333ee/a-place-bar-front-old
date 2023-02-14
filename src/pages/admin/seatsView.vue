@@ -1,8 +1,52 @@
 <template>
-    <q-page class="q-pa-md">
+  <q-page class="q-pa-md">
     <div class="row">
       <div class="col-12">
-        <q-btn color="primary" label="新增座位" @click="openDialog(-1)" class="q-mb-md"/>
+        <q-btn color="primary" label="新增樓層照片" @click="openPicDialog(-1)" class="q-mb-md"/>
+        <q-dialog v-model="form.dialog" persistent>
+          <q-card style="width: 700px; max-width: 80vw;">
+            <q-toolbar class="bg-primary text-white">
+              <q-toolbar-title>
+                <div class="text-center">{{ form._id.length > 0 ? '更改照片' : '新增照片' }}</div>
+              </q-toolbar-title>
+            </q-toolbar>
+            <q-form v-model="form.valid" @submit="submit">
+              <q-card class="q-pa-md">
+                <q-card-section class="q-pt-none">
+                  <v-image-input v-model="form.image" removable :max-file-size="1" />
+                </q-card-section>
+                <q-card-actions align="center">
+                  <q-btn type="submit" label="確定" color="positive" />
+                  <q-btn @click="form.dialog = false" label="取消" color="negative"/>
+                </q-card-actions>
+              </q-card>
+            </q-form>
+          </q-card>
+        </q-dialog>
+      </div>
+      <div class="col-12">
+        <q-markup-table>
+          <thead class="text-center">
+            <tr>
+              <th>樓層</th>
+              <th>照片</th>
+              <th>編輯</th>
+            </tr>
+          </thead>
+          <tbody class="text-center">
+            <tr v-for="(seat, idx) in seats" :key="seat._id">
+              <td>{{ seat.floor }}</td>
+              <td>
+                <q-btn color="primary" icon="edit" @click="openPicDialog(idx)" />
+              </td>
+            </tr>
+          </tbody>
+        </q-markup-table>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <q-btn color="primary" label="新增座位" @click="openSeatDialog(-1)" class="q-mb-md"/>
         <q-dialog v-model="form.dialog" persistent>
           <q-card style="width: 700px; max-width: 80vw;">
             <q-toolbar class="bg-primary text-white">
@@ -55,7 +99,7 @@
                 <q-toggle v-model="seat.using" color="green"/>
               </td>
               <td>
-                <q-btn color="primary" icon="edit" @click="openDialog(idx)" />
+                <q-btn color="primary" icon="edit" @click="openSeatDialog(idx)" />
               </td>
             </tr>
           </tbody>
@@ -84,6 +128,7 @@ const form = reactive({
   name: '',
   floor: '',
   seatNumber: 0,
+  image: undefined,
   book: false,
   using: false,
   category: '',
@@ -92,7 +137,20 @@ const form = reactive({
   idx: -1
 })
 
-const openDialog = (idx) => {
+const openPicDialog = (idx) => {
+  if (idx === -1) {
+    form.image = undefined
+    form.valid = false
+    form.idx = -1
+  } else {
+    form.image = undefined
+    form.valid = false
+    form.idx = idx
+  }
+  form.dialog = true
+}
+
+const openSeatDialog = (idx) => {
   if (idx === -1) {
     form._id = ''
     form.name = ''
@@ -125,6 +183,7 @@ const submit = async () => {
   fd.append('name', form.name)
   fd.append('floor', form.floor)
   fd.append('seatNumber', form.seatNumber)
+  fd.append('image', form.image)
   fd.append('book', form.book)
   fd.append('using', form.using)
   fd.append('category', form.category)

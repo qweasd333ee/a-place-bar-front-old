@@ -1,7 +1,7 @@
 <template>
   <q-layout id="front-layout" view="hHh Lpr lff">
     <q-header elevated >
-      <q-toolbar>
+      <q-toolbar color="#868F96">
         <q-btn class="menu" v-if="$q.screen.lt.md" dense flat round icon="menu" @click="drawer = !drawer"/>
         <q-toolbar-title>
           <router-link style="text-decoration: none; color: white;" to="/">一個地方</router-link>
@@ -83,6 +83,11 @@
   </q-layout>
 </template>
 <style lang="scss" scoped>
+#front-layout {
+  .q-toolbar {
+    background-color: #868F96;
+  }
+}
 </style>
 
 <script setup>
