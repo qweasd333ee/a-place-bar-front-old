@@ -36,7 +36,7 @@
             </q-item-section>
             <q-item-section>座位管理</q-item-section>
           </q-item>
-          <q-item clickable v-ripple to="">
+          <q-item clickable v-ripple to="/admin/bookings">
             <q-item-section avatar>
               <q-icon name="airline_seat_recline_extra" />
             </q-item-section>

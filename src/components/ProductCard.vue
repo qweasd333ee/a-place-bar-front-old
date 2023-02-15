@@ -15,7 +15,7 @@
           <p style="white-space: pre;">{{ description }}</p>
         </q-item-label>
         <q-item-label>
-          <q-btn color="primary" icon="shopping_cart" label="加入購物車" @click="editCart({_id, quantity: 1})" />
+          <q-btn color="primary" icon="shopping_cart" label="加入購物車" @click="editCartProduct({_id, quantity: 1})" />
         </q-item-label>
       </q-card-section>
     </q-card>
@@ -23,7 +23,7 @@
 </template>
 
 <script setup>
-import { useUserStore } from 'src/stores/user'
+import { useUserStore } from 'src/stores/user.js'
 
 defineProps({
   _id: {
@@ -57,5 +57,5 @@ defineProps({
 })
 
 const user = useUserStore()
-const { editCart } = user
+const { editCartProduct } = user
 </script>

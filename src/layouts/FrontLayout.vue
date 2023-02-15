@@ -1,12 +1,11 @@
 <template>
   <q-layout id="front-layout" view="hHh Lpr lff">
     <q-header elevated >
-      <q-toolbar color="#868F96">
+      <q-toolbar>
         <q-btn class="menu" v-if="$q.screen.lt.md" dense flat round icon="menu" @click="drawer = !drawer"/>
         <q-toolbar-title>
-          <router-link style="text-decoration: none; color: white;" to="/">一個地方</router-link>
+          <img src="@/assets/LogoPic/logo2.jpg" style="width: 50px;">
         </q-toolbar-title>
-
         <div v-if="$q.screen.gt.sm" class="GL__toolbar-link q-ml-xs q-gutter-md text-body2 text-weight-bold row items-center no-wrap">
           <q-btn flat to="">
             關於我們
@@ -22,16 +21,57 @@
         <div class="q-pl-sm q-gutter-sm row items-center no-wrap">
           <q-btn class="register" v-if="!isLogin" flat to="/register" name="註冊" label="註冊"/>
           <q-btn class="login" v-if="!isLogin" flat to="/login" name="登入" label="登入" />
-          <q-btn class="conter" v-if="isLogin" flat to="" name="會員中心" label="會員中心" />
-          <q-btn class="admin" v-if="isLogin && isAdmin" flat to="/admin" name="註冊" label="管理" />
-          <q-btn class="orders" v-if="isLogin" flat to="/orders" name="login" label="訂單" />
-          <q-btn class="CartProduct" v-if="isLogin" flat to="/CartProduct" name="CartProduct" icon="shopping_cart">
+          <q-btn class="admin" v-if="isLogin && isAdmin" flat to="/admin" name="管理" label="管理" />
+          <q-btn class="CartProduct" v-if="isLogin" flat  name="CartProduct" icon="local_bar">
             <q-badge color="red" rounded floating :label="CartProduct" />
+            <q-menu>
+              <q-list style="min-width: 100px">
+                <q-item clickable v-close-popup v-if="isLogin" to="/CartProduct">
+                  <q-item-section>
+                    訂餐
+                  </q-item-section>
+                </q-item>
+                <q-item clickable v-close-popup v-if="isLogin" to="/orders">
+                  <q-item-section>
+                    訂餐清單
+                  </q-item-section>
+                </q-item>
+              </q-list>
+            </q-menu>
           </q-btn>
-          <q-btn class="CartSeat" v-if="isLogin" flat to="/CartSeat" name="CartSeat" icon="chair">
+          <q-btn class="CartSeat" v-if="isLogin" flat name="CartSeat" icon="chair">
             <q-badge color="red" rounded floating :label="CartSeat" />
+            <q-menu>
+              <q-list style="min-width: 100px">
+                <q-item clickable v-close-popup v-if="isLogin" to="/CartSeat">
+                  <q-item-section>
+                    訂位
+                  </q-item-section>
+                </q-item>
+                <q-item clickable v-close-popup v-if="isLogin" to="/bookings">
+                  <q-item-section>
+                    訂位清單
+                  </q-item-section>
+                </q-item>
+              </q-list>
+            </q-menu>
           </q-btn>
-          <q-btn class="logout" v-if="isLogin" flat @click="logout" name="logout" label="登出"/>
+          <q-btn class="logout" v-if="isLogin" flat icon="person">
+            <q-menu>
+              <q-list style="min-width: 100px">
+                <q-item clickable v-close-popup v-if="isLogin">
+                  <q-item-section>
+                    會員中心
+                  </q-item-section>
+                </q-item>
+                <q-item clickable v-close-popup v-if="isLogin" @click="logout">
+                  <q-item-section>
+                    登出
+                  </q-item-section>
+                </q-item>
+              </q-list>
+            </q-menu>
+          </q-btn>
         </div>
 
       </q-toolbar>
@@ -82,10 +122,10 @@
     </q-page-container>
   </q-layout>
 </template>
-<style lang="scss" scoped>
+<style lang="scss">
 #front-layout {
   .q-toolbar {
-    background-color: #868F96;
+    background-color: #000000;
   }
 }
 </style>
@@ -95,7 +135,7 @@ import { ref } from 'vue'
 import { storeToRefs } from 'pinia'
 import { useUserStore } from 'src/stores/user'
 const user = useUserStore()
-const { isLogin, isAdmin, CartProduct } = storeToRefs(user)
+const { isLogin, isAdmin, CartProduct, CartSeat } = storeToRefs(user)
 const { logout } = user
 const drawer = ref(false)
 

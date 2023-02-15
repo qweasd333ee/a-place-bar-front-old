@@ -2,46 +2,44 @@
   <q-page class="q-pa-md">
     <div class="row">
       <div class="col-12 text-center text-h5">
-        座位購物車
+        訂位
       </div>
       <div class="col-12">
         <q-markup-table>
           <thead class="text-center">
             <tr>
-              <th>圖片</th>
-              <th>名稱</th>
-              <th>單價</th>
-              <th>數量</th>
-              <th>小計</th>
+              <th>座位編號</th>
+              <th>樓層</th>
+              <th>分類</th>
+              <th>座位數</th>
+              <th>訂位人數</th>
               <th>操作</th>
             </tr>
           </thead>
           <tbody class="text-center">
-            <tr v-for="(product, idx) in CartProduct" :key="product._id" :class="{'bg-red': !product.p_id.sell}">
-              <td>
-                <q-img :src="product.p_id.image" :ratio="1" width="150px"/>
-              </td>
-              <td>{{ product.p_id.name }}</td>
-              <td>{{ product.p_id.price }}</td>
+            <tr v-for="(seat, idx) in CartSeat" :key="seat._id" :class="{'bg-red': !seat.s_id.book}">
+              <td>{{ seat.s_id.name }}</td>
+              <td>{{ seat.s_id.floor }}</td>
+              <td>{{ seat.s_id.category }}</td>
+              <td>{{ seat.s_id.seatNumber }}</td>
               <td>
                 <q-btn color="primary" label="-" @click="updateCart(idx, -1)" />
-                &nbsp;{{ product.quantity }}&nbsp;
+                &nbsp;{{ seat.quantity }}&nbsp;
                 <q-btn color="primary" label="+" @click="updateCart(idx, 1)"/>
               </td>
-              <td>{{ product.quantity * product.p_id.price }}</td>
               <td>
-                <q-btn color="primary" @click="updateCart(idx, product.quantity * -1)" label="刪除" />
+                <q-btn color="primary" @click="updateCart(idx, seat.quantity * -1)" label="刪除" />
               </td>
             </tr>
-            <tr v-if="CartProduct.length === 0">
-              <td class="text-center" colspan="6">沒有商品</td>
+            <tr v-if="CartSeat.length === 0">
+              <td class="text-center" colspan="6">沒有訂位</td>
             </tr>
           </tbody>
         </q-markup-table>
       </div>
       <div class="col-12 text-center">
-        <h5>總金額 {{ totalPrice }}</h5>
-        <q-btn color="primary" label="結帳" :disabled="!canCheckout" @click="onCheckoutBtnClick" />
+        <h5>總人數 {{ totalPerson }}</h5>
+        <q-btn color="primary" label="訂位" :disabled="!canBooking" @click="onBookingBtnClick" />
       </div>
     </div>
   </q-page>
@@ -57,39 +55,39 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 const user = useUserStore()
-const { editCart, checkout } = user
+const { editCartSeat, booking } = user
 
-const CartProduct = reactive([])
+const CartSeat = reactive([])
 
 const updateCart = async (idx, quantity) => {
-  await editCart({ _id: CartProduct[idx].p_id._id, quantity })
-  CartProduct[idx].quantity += quantity
-  if (CartProduct[idx].quantity <= 0) {
-    CartProduct.splice(idx, 1)
+  await editCartSeat({ _id: CartSeat[idx].s_id._id, quantity })
+  CartSeat[idx].quantity += quantity
+  if (CartSeat[idx].quantity <= 0) {
+    CartSeat.splice(idx, 1)
   }
 }
 
-async function onCheckoutBtnClick () {
-  await checkout()
-  router.push('/orders')
+async function onBookingBtnClick () {
+  await booking()
+  router.push('/bookings')
 }
 
-const totalPrice = computed(() => {
-  return CartProduct.reduce((total, current) => {
-    return total + (current.p_id.price * current.quantity)
+const totalPerson = computed(() => {
+  return CartSeat.reduce((total, current) => {
+    return total + (current.quantity)
   }, 0)
 })
 
-const canCheckout = computed(() => {
-  return CartProduct.length > 0 && !CartProduct.some(product => {
-    return !product.p_id.sell
+const canBooking = computed(() => {
+  return CartSeat.length > 0 && !CartSeat.some(seat => {
+    return !seat.s_id.book
   })
 });
 
 (async () => {
   try {
-    const { data } = await apiAuth.get('/users/CartProduct')
-    CartProduct.push(...data.result)
+    const { data } = await apiAuth.get('/users/CartSeat')
+    CartSeat.push(...data.result)
   } catch (error) {
     Swal.fire({
       icon: 'error',

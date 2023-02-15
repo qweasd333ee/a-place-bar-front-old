@@ -47,9 +47,5 @@ export default route(function (/* { store, ssrContext } */) {
     }
   })
 
-  Router.afterEach((to, from) => {
-    document.title = to.meta.title
-  })
-
   return Router
 })

@@ -26,7 +26,7 @@ const route = useRoute()
 const router = useRouter()
 
 const user = useUserStore()
-const { editCart } = user
+const { editCartProduct } = user
 
 const valid = ref(false)
 
@@ -54,7 +54,7 @@ const product = reactive({
 const submitCart = () => {
   // console.log(valid.value)
   // if (!valid.value) return
-  editCart({ _id: product._id, quantity: quantity.value })
+  editCartProduct({ _id: product._id, quantity: quantity.value })
 }
 
 (async function () {

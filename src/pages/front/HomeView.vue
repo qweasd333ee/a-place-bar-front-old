@@ -2,8 +2,7 @@
   <q-page id="home-view">
     <section id="section01" class="row">
       <div class="col-12">
-        <q-parallax>
-          <img src="@/assets/CarouselPic/pic1.jpeg" width="1200" height="1000">
+        <q-parallax src="@/assets/CarouselPic/pic1.jpeg">
         </q-parallax>
       </div>
     </section>

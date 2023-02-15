@@ -2,7 +2,7 @@
   <q-page class="q-pa-md">
     <div class="row">
       <div class="col-12 text-center text-h5">
-        餐點購物車
+        訂餐
       </div>
       <div class="col-12">
         <q-markup-table>
@@ -57,19 +57,19 @@ import { useRouter } from 'vue-router'
 const router = useRouter()
 
 const user = useUserStore()
-const { editCart, checkout } = user
+const { editCartProduct, checkout } = user
 
 const CartProduct = reactive([])
 
 const updateCart = async (idx, quantity) => {
-  await editCart({ _id: CartProduct[idx].p_id._id, quantity })
+  await editCartProduct({ _id: CartProduct[idx].p_id._id, quantity })
   CartProduct[idx].quantity += quantity
   if (CartProduct[idx].quantity <= 0) {
     CartProduct.splice(idx, 1)
   }
 }
 
-async function onCheckoutBtnClick () {
+const onCheckoutBtnClick = async () => {
   await checkout()
   router.push('/orders')
 }
