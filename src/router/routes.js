@@ -102,6 +102,16 @@ const routes = [
           login: true,
           admin: false
         }
+      },
+      {
+        path: 'about',
+        name: 'about',
+        component: () => import('pages/front/aboutView.vue'),
+        meta: {
+          title: '一個地方 | 關於我們',
+          login: false,
+          admin: false
+        }
       }
     ]
   },

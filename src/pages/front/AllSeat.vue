@@ -1,7 +1,6 @@
 <template>
-  <div id="seat" class="row">
-    <div class="text-center text-h5 q-my-lg col-12">線上訂位</div>
-    <div class="col-12 flex">
+  <div id="seat" class="row bg-grey" style="height: calc(100vh - 50px);">
+    <div class="col-12 q-px-xl flex flex-center">
       <div class="row">
         <img class="col-6" src="@/assets/CarouselPic/pic1.jpeg">
         <q-markup-table class="col-6">
@@ -22,7 +21,7 @@
         </q-markup-table>
       </div>
     </div>
-    </div>
+  </div>
 </template>
 
 <script setup>

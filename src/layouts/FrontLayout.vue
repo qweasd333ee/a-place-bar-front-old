@@ -4,10 +4,11 @@
       <q-toolbar>
         <q-btn class="menu" v-if="$q.screen.lt.md" dense flat round icon="menu" @click="drawer = !drawer"/>
         <q-toolbar-title>
-          <img src="@/assets/LogoPic/logo2.jpg" style="width: 50px;">
+          <q-img src="@/assets/LogoPic/logo2.jpg" style="height: 50px; width: 50px;" />
+          <router-link class="text-white" to="/">一個地方</router-link>
         </q-toolbar-title>
         <div v-if="$q.screen.gt.sm" class="GL__toolbar-link q-ml-xs q-gutter-md text-body2 text-weight-bold row items-center no-wrap">
-          <q-btn flat to="">
+          <q-btn flat to="/about">
             關於我們
           </q-btn>
           <q-btn flat to="/product">
@@ -88,7 +89,7 @@
       >
       <q-scroll-area class="fit">
         <q-list>
-          <q-item clickable v-ripple to="">
+          <q-item clickable v-ripple to="/about">
             <q-item-section>
               關於我們
             </q-item-section>
@@ -98,19 +99,9 @@
               餐點介紹
             </q-item-section>
           </q-item>
-          <q-item clickable v-ripple to="" >
+          <q-item clickable v-ripple to="/seat" >
             <q-item-section>
               線上訂位
-            </q-item-section>
-          </q-item>
-          <q-item clickable v-ripple to="" >
-            <q-item-section>
-              購物車
-            </q-item-section>
-          </q-item>
-          <q-item clickable v-ripple to="" >
-            <q-item-section>
-              會員中心
             </q-item-section>
           </q-item>
         </q-list>
@@ -120,6 +111,8 @@
     <q-page-container>
       <router-view />
     </q-page-container>
+
+    <q-footer v-model="footer" reveal elevated bordered></q-footer>
   </q-layout>
 </template>
 <style lang="scss">
