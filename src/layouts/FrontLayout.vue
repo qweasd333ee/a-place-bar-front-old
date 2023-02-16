@@ -1,13 +1,8 @@
 <template>
   <q-layout id="front-layout" view="hHh Lpr lff">
-    <q-header elevated >
-      <q-toolbar>
-        <q-btn class="menu" v-if="$q.screen.lt.md" dense flat round icon="menu" @click="drawer = !drawer"/>
-        <q-toolbar-title>
-          <q-img src="@/assets/LogoPic/logo2.jpg" style="height: 50px; width: 50px;" />
-          <router-link class="text-white" to="/">一個地方</router-link>
-        </q-toolbar-title>
-        <div v-if="$q.screen.gt.sm" class="GL__toolbar-link q-ml-xs q-gutter-md text-body2 text-weight-bold row items-center no-wrap">
+    <q-header elevated reveal>
+      <q-toolbar >
+        <div class="toolbar-left-link" v-if="$q.screen.gt.sm">
           <q-btn flat to="/about">
             關於我們
           </q-btn>
@@ -18,9 +13,14 @@
             線上訂位
           </q-btn>
         </div>
-        <q-space />
-        <div class="q-pl-sm q-gutter-sm row items-center no-wrap">
-          <q-btn class="register" v-if="!isLogin" flat to="/register" name="註冊" label="註冊"/>
+        <q-space v-if="$q.screen.gt.sm"/>
+        <q-toolbar-title class="flex flex-center">
+          <a href="/">
+            <q-img class="q-mx-auto" src="@/assets/LogoPic/logo2.jpg" />
+          </a>
+        </q-toolbar-title>
+        <q-space v-if="$q.screen.gt.sm"/>
+        <div class="toolbar-right-link" v-if="$q.screen.gt.sm">
           <q-btn class="login" v-if="!isLogin" flat to="/login" name="登入" label="登入" />
           <q-btn class="admin" v-if="isLogin && isAdmin" flat to="/admin" name="管理" label="管理" />
           <q-btn class="CartProduct" v-if="isLogin" flat  name="CartProduct" icon="local_bar">
@@ -74,7 +74,7 @@
             </q-menu>
           </q-btn>
         </div>
-
+        <q-btn class="menu" v-if="$q.screen.lt.md" dense flat round icon="menu" @click="drawer = !drawer"/>
       </q-toolbar>
 
     </q-header>
@@ -112,16 +112,55 @@
       <router-view />
     </q-page-container>
 
-    <q-footer v-model="footer" reveal elevated bordered></q-footer>
+    <q-footer class="bg-black">
+      <div v-if="$q.screen.gt.xs" class="q-pa-md row footer">
+        <div class="footerCol col-3 row">
+          <div class="col-12 footerLogo">
+            <q-img src="@/assets/LogoPic/logo2.jpg" style="height: 50px; width: 50px;" />
+          </div>
+
+          <div class="col-12 footerIcons">
+            <q-icon name="mdi-instagram"></q-icon>
+            <q-icon name="mdi-facebook"></q-icon>
+            <q-icon name="mdi-twitter"></q-icon>
+            <q-icon name="mdi-google-plus"></q-icon>
+          </div>
+        </div>
+
+        <div class="footerCol col-3 contact">
+          <p>聯絡我們</p>
+          <p><q-icon name="mdi-phone" />0900-000-000</p>
+          <p><q-icon name="mdi-gmail" />a-place-bar@gmail.com</p>
+        </div>
+        <div class="footerCol col-3 copyRight">
+          <p>Designed by kaixuan</p>
+          <p>Copyright <q-icon name="mdi-copyright"></q-icon>2023 a-place-bar</p>
+        </div>
+      </div>
+
+<!-- iPhone -->
+      <div v-if="$q.screen.lt.sm" class="q-pa-md row footer smallFooter">
+        <div class="col-12 footerLogo">
+            <q-img src="@/assets/LogoPic/logo2.jpg" style="height: 50px; width: 50px;" />
+        </div>
+        <div class="col-12 footerIcons">
+            <q-icon name="mdi-instagram"></q-icon>
+            <q-icon name="mdi-facebook"></q-icon>
+            <q-icon name="mdi-twitter"></q-icon>
+            <q-icon name="mdi-google-plus"></q-icon>
+        </div>
+        <div class="col-12 row contact">
+          <div class="col-6"><q-icon name="mdi-phone"></q-icon>0900-000-000</div>
+          <div class="col-6"><q-icon name="mdi-gmail"></q-icon>a-place-bar@gmail.com</div>
+        </div>
+        <div class="col-12 copyRight">
+          <p>Designed by kaixuan</p>
+          <p>Copyright <q-icon name="mdi-copyright"></q-icon>2023 a-place-bar</p>
+        </div>
+      </div>
+    </q-footer>
   </q-layout>
 </template>
-<style lang="scss">
-#front-layout {
-  .q-toolbar {
-    background-color: #000000;
-  }
-}
-</style>
 
 <script setup>
 import { ref } from 'vue'

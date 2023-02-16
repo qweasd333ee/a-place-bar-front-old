@@ -1,0 +1,29 @@
+#front-layout {
+  .q-header {
+    height: 70px;
+    .q-toolbar {
+      height: 70px;
+      background-color: #000000;
+      .q-img {
+        width: 70px;
+        height: 70px;
+      }
+      .toolbar-left-link {
+        .q-btn {
+          font-size: 1.2rem;
+          &:hover {
+            color: #E27638;
+          }
+        }
+      }
+      .toolbar-right-link {
+        .q-btn {
+          font-size: 1.2rem;
+          &:hover {
+            color: #E27638;
+          }
+        }
+      }
+    }
+  }
+}

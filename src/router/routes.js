@@ -14,16 +14,6 @@ const routes = [
         }
       },
       {
-        path: 'register',
-        name: 'register',
-        component: () => import('pages/front/RegisterView.vue'),
-        meta: {
-          title: '一個地方 | 註冊',
-          login: false,
-          admin: false
-        }
-      },
-      {
         path: 'login',
         name: 'login',
         component: () => import('pages/front/LoginView.vue'),

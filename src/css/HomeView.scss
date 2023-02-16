@@ -1,0 +1,68 @@
+#home-view {
+  #section01 {
+    .q-carousel {
+      height: calc(100vh - 70px);
+    }
+  }
+  #section02 {
+    background: #e1d0b6;
+    .text {
+      margin: 150px;
+    }
+  }
+  #section03 {
+    .q-parallax {
+      img {
+        width: 800px;
+        top: -110%;
+        left: 50%;
+      }
+    }
+    .q-card:nth-child(1) {
+      height: 50%;
+      text-align: center;
+      background: #e1d0b6;
+      .q-btn {
+        &:hover {
+          background: black !important;
+          color: white;
+        }
+      }
+    }
+    .q-card:nth-child(2) {
+      background: #20241a;
+    }
+  }
+  #section04 {
+    background: #20241a;
+    .q-parallax {
+      img {
+        top: -50%;
+        left: 50%;
+      }
+    }
+    .q-card {
+      background: #20241a;
+    }
+    .text {
+      margin: 150px 0;
+    }
+  }
+  #section06 {
+    background: #e1d0b6;
+    .container {
+      max-width: 840px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+    .pic {
+      padding: 0 5px;
+      img {
+        height: auto;
+        max-width: 100%;
+        vertical-align: middle;
+        margin-bottom: 10px;
+      }
+    }
+  }
+}

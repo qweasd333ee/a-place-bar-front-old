@@ -1,0 +1,67 @@
+#LoginView {
+  height: calc(100vh - 50px);
+  position: relative;
+  .bg-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+    .q-img {
+      min-height: 100%;
+      width: 100%;
+    }
+  }  
+  .q-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    width: 40%;
+    max-width: 1000px;
+    height: 80%;
+    border-radius: 10px;
+    z-index: 2;
+    .q-tab__label {
+      font-size: 1.2rem;
+      // color: white;
+    }
+    .form {
+      justify-content: center;
+      align-items: center;
+      padding: 50px 0;
+      height: 100%;
+      width: 100%;
+      .q-tab-panels {
+        width: 85%;
+        height: 90%;
+        margin: auto;
+        align-items: center;
+        border-radius: 20px;
+      }
+      .q-tab-panel {
+        display: flex;
+        justify-content: center;
+        .text-h6 {
+          padding-top: 10px;
+          font-size: 1.75rem;
+          color: $secondary;
+          font-weight: 700;
+        }
+        .q-form {
+          width: 100%;
+          justify-content: space-around;
+          .q-btn {
+            align-self: center;
+            width:40%;
+            span {
+              font-size: 1rem;
+            }
+          }
+        }
+      }
+    }
+  }
+}
