@@ -2,7 +2,7 @@
   <div id="seat" class="row bg-grey" style="height: calc(100vh - 50px);">
     <div class="col-12 q-px-xl flex flex-center">
       <div class="row">
-        <img class="col-6" src="@/assets/CarouselPic/pic1.jpeg">
+        <img class="col-6" src="@/assets/CarouselPic/pic30.jpeg">
         <q-markup-table class="col-6">
           <thead class="text-center">
             <tr>

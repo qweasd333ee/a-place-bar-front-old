@@ -4,19 +4,31 @@
       <div class="col-12">
         <div class="text-center text-h5 q-my-lg">餐點介紹</div>
       </div>
-      <div v-for="product in products" :key="product._id" class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
-        <ProductCard v-bind="product" class="q-mx-md q-mb-md"></ProductCard>
+      <div class="row">
+          <q-card class="col-12">
+            <q-tabs v-model="tab" dense class="text-grey" active-color="primary" indicator-color="primary" narrow-indicator align="justify">
+              <q-tab name="酒" label="酒" />
+            </q-tabs>
+            <q-tab-panels v-model="tab" animated >
+              <q-tab-panel name="酒" >
+                <div v-for="product in products" :key="product._id" class="col-xs-12 col-sm-6 col-md-4 col-lg-3 col-xl-2">
+                  <ProductCard v-bind="product" class="q-mx-md q-mb-md"></ProductCard>
+                </div>
+              </q-tab-panel>
+            </q-tab-panels>
+          </q-card>
       </div>
     </div>
   </q-page>
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { ref, reactive } from 'vue'
 import { api } from 'src/boot/axios'
 import Swal from 'sweetalert2'
 import ProductCard from 'src/components/ProductCard.vue'
 
+const tab = ref('酒')
 const products = reactive([]);
 
 (async () => {

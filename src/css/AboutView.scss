@@ -1,0 +1,74 @@
+#about-view {
+  #header {
+    background: url('@/assets/CarouselPic/pic24.jpeg') no-repeat center/cover;
+    div {
+      padding: 10rem 0;
+    }
+  }
+  #section01 {
+    padding-top: 9rem;
+    padding-bottom: 7rem;
+    .container {
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+      .row {
+        .text-1 {
+          .hr {
+            width: 2rem;
+            height: 3px;
+            background-color: orange;
+            border: none;
+          }
+        }
+        .text-2 {
+          border: 1px solid rgb(221, 221, 221);
+          .q-img {
+            transform: translate(-10%, -10%);
+          }
+        }
+      }
+    }
+  }
+  #section02 {
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    .container {
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+
+    }
+  }
+  #section03 {
+    padding-top: 9rem;
+    padding-bottom: 9rem;
+    background: #DFE3E2;
+    .container {
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  #section04 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    .container {
+      max-width: 960px;
+      margin-left: auto;
+      margin-right: auto;
+      .col-md-6 {
+        order: 2;
+        .q-img {
+          -webkit-clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
+          clip-path: polygon(5% 0, 100% 0, 100% 100%, 0 100%);
+        }
+      }
+    }
+  }
+  #section05 {
+    iframe {
+      height: 400px;
+    }
+  }
+}

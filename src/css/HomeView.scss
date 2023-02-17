@@ -1,19 +1,21 @@
 #home-view {
   #section01 {
-    .q-carousel {
+    .banner {
       height: calc(100vh - 70px);
+      background: url('@/assets/CarouselPic/pic23.jpeg') no-repeat bottom/cover;
     }
   }
   #section02 {
     background: #e1d0b6;
-    .text {
+    .q-card {
       margin: 150px;
+      background: #e1d0b6;
     }
   }
   #section03 {
     .q-parallax {
       img {
-        width: 800px;
+        width: 1100px;
         top: -110%;
         left: 50%;
       }
@@ -24,44 +26,53 @@
       background: #e1d0b6;
       .q-btn {
         &:hover {
-          background: black !important;
+          background: #20241a !important;
           color: white;
         }
       }
     }
     .q-card:nth-child(2) {
+      height: 50%;
+      text-align: center;
       background: #20241a;
+      color: white;
+      .q-btn {
+        &:hover {
+          background: #e1d0b6 !important;
+          color: black;
+        }
+      }
     }
   }
   #section04 {
     background: #20241a;
-    .q-parallax {
-      img {
-        top: -50%;
-        left: 50%;
-      }
-    }
     .q-card {
+      color: white;
       background: #20241a;
     }
-    .text {
-      margin: 150px 0;
-    }
   }
-  #section06 {
+  #section05 {
     background: #e1d0b6;
     .container {
+      height: 1200px;
       max-width: 840px;
       margin-left: auto;
       margin-right: auto;
-    }
-    .pic {
-      padding: 0 5px;
-      img {
-        height: auto;
-        max-width: 100%;
-        vertical-align: middle;
-        margin-bottom: 10px;
+      .row {
+        padding-top: 2rem;
+      }
+      .column {
+        height: 1200px;
+        margin-bottom: 5rem;
+        .cell {
+          padding: 0 5px;
+          margin-bottom: 10px;
+          width: 33.333%;
+        }
+        .flex-break {
+          flex: 1 0 100% !important;
+          width: 0 !important;
+        }
       }
     }
   }

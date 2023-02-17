@@ -129,8 +129,8 @@
 
         <div class="footerCol col-3 contact">
           <p>聯絡我們</p>
-          <p><q-icon name="mdi-phone" />0900-000-000</p>
-          <p><q-icon name="mdi-gmail" />a-place-bar@gmail.com</p>
+          <p><q-icon name="mdi-phone" />0965-603-279</p>
+          <p><q-icon name="mdi-gmail" />a.place.greenisland@gmail.com</p>
         </div>
         <div class="footerCol col-3 copyRight">
           <p>Designed by kaixuan</p>
@@ -150,8 +150,8 @@
             <q-icon name="mdi-google-plus"></q-icon>
         </div>
         <div class="col-12 row contact">
-          <div class="col-6"><q-icon name="mdi-phone"></q-icon>0900-000-000</div>
-          <div class="col-6"><q-icon name="mdi-gmail"></q-icon>a-place-bar@gmail.com</div>
+          <div class="col-6"><q-icon name="mdi-phone"></q-icon>0965-603-279</div>
+          <div class="col-6"><q-icon name="mdi-gmail"></q-icon>a.place.greenisland@gmail.com</div>
         </div>
         <div class="col-12 copyRight">
           <p>Designed by kaixuan</p>
