@@ -42,7 +42,7 @@
             </q-item-section>
             <q-item-section>訂位管理</q-item-section>
           </q-item>
-          <q-item clickable v-ripple to="">
+          <q-item clickable v-ripple to="/admin/members">
             <q-item-section avatar>
               <q-icon name="account_circle" />
             </q-item-section>

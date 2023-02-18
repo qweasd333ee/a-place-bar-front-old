@@ -158,6 +158,16 @@ const routes = [
           login: true,
           admin: true
         }
+      },
+      {
+        path: 'members',
+        name: 'members',
+        component: () => import('../pages/admin/membersView.vue'),
+        meta: {
+          title: '一個地方 | 會員管理',
+          login: true,
+          admin: true
+        }
       }
     ]
   },

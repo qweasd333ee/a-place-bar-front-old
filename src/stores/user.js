@@ -2,7 +2,7 @@ import { defineStore } from 'pinia'
 import { ref, computed } from 'vue'
 import { api, apiAuth } from '../boot/axios.js'
 import Swal from 'sweetalert2'
-import { LocalStorage } from 'quasar'
+import { LocalStorage, Notify } from 'quasar'
 
 export const useUserStore = defineStore('user', () => {
   const token = ref('')
@@ -96,11 +96,22 @@ export const useUserStore = defineStore('user', () => {
     try {
       const { data } = await apiAuth.post('/users/CartProduct', { p_id: _id, quantity: parseInt(quantity) })
       CartProduct.value = data.result
-      Swal.fire({
-        icon: 'success',
-        title: '成功',
-        text: '加入購物車成功'
-      })
+      // Swal.fire({
+      //   icon: 'success',
+      //   title: '成功',
+      //   text: '加入購物車成功'
+      // })
+      if (quantity >= 1) {
+        Notify.create({
+          message: '已增加',
+          color: 'green'
+        })
+      } else if (quantity < 0) {
+        Notify.create({
+          message: '已減少',
+          color: 'red'
+        })
+      }
     } catch (error) {
       Swal.fire({
         icon: 'error',
@@ -123,11 +134,22 @@ export const useUserStore = defineStore('user', () => {
     try {
       const { data } = await apiAuth.post('/users/CartSeat', { s_id: _id, quantity: parseInt(quantity) })
       CartSeat.value = data.result
-      Swal.fire({
-        icon: 'success',
-        title: '成功',
-        text: '加入購物車成功'
-      })
+      // Swal.fire({
+      //   icon: 'success',
+      //   title: '成功',
+      //   text: '加入購物車成功'
+      // })
+      if (quantity >= 1) {
+        Notify.create({
+          message: '已增加人數',
+          color: 'green'
+        })
+      } else if (quantity < 0) {
+        Notify.create({
+          message: '已減少人數',
+          color: 'red'
+        })
+      }
     } catch (error) {
       console.log(error?.response)
       Swal.fire({
