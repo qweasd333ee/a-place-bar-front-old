@@ -12,15 +12,21 @@
           </div>
         </div>
         <div class="row">
-          <q-card flat>
+          <q-card flat class="col-12">
             <q-tabs v-model="tab" dense class="text-grey q-mb-lg" active-color="primary" indicator-color="primary" narrow-indicator align="center">
-              <q-tab name="酒" label="酒" />
-              <q-tab name="炸物" label="炸物" />
+              <q-tab name="shot" label="shot" />
+              <q-tab name="茶酒" label="茶酒" />
+              <q-tab name="特調" label="特調" />
+              <q-tab name="奶酒" label="奶酒" />
+              <q-tab name="啤酒" label="啤酒" />
+              <q-tab name="無酒精" label="無酒精" />
+              <q-tab name="拼盤" label="拼盤" />
+              <q-tab name="單點" label="單點" />
             </q-tabs>
             <q-tab-panels v-model="tab" animated >
-              <q-tab-panel name="酒" class="row">
-                <div v-for="product in products" :key="product._id" class="col-12 col-md-6">
-                  <ProductCard v-bind="product" class="q-px-md"></ProductCard>
+              <q-tab-panel class="row" :name="tab">
+                <div v-for="product in filterData" :key="product" class="col-12 col-md-6">
+                  <ProductCard v-bind="product"></ProductCard>
                 </div>
               </q-tab-panel>
             </q-tab-panels>
@@ -32,13 +38,17 @@
 </template>
 
 <script setup>
-import { ref, reactive } from 'vue'
+import { ref, reactive, computed } from 'vue'
 import { api } from 'src/boot/axios'
 import Swal from 'sweetalert2'
 import ProductCard from 'src/components/ProductCard.vue'
 
-const tab = ref('酒')
-const products = reactive([]);
+const tab = ref('shot')
+const products = reactive([])
+
+const filterData = computed(() => {
+  return products.filter((item) => item.category === tab.value)
+});
 
 (async () => {
   try {

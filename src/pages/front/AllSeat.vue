@@ -1,27 +1,31 @@
 <template>
-  <div id="seat" class="row bg-grey" style="height: calc(100vh - 50px);">
-    <div class="col-12 q-px-xl flex flex-center">
-      <div class="row">
-        <img class="col-6" src="@/assets/CarouselPic/pic30.jpeg">
-        <q-markup-table class="col-6">
-          <thead class="text-center">
-            <tr>
-              <th>座位編號</th>
-              <th>樓層</th>
-              <th>分類</th>
-              <th>位數</th>
-              <th>訂位</th>
-            </tr>
-          </thead>
-          <tbody class="text-center">
-            <tr v-for="seat in seats" :key="seat._id">
-              <SeatTable v-bind="seat"></SeatTable>
-            </tr>
-          </tbody>
-        </q-markup-table>
+  <q-page id="all-seat">
+    <header id="header">
+      <div class="text-white text-center text-h3 background">線上訂位</div>
+    </header>
+    <section id="section01">
+      <div class="container">
+        <div class="row">
+          <q-markup-table class="col-12">
+            <thead class="text-center">
+              <tr>
+                <th>座位編號</th>
+                <th>樓層</th>
+                <th>分類</th>
+                <th>位數</th>
+                <th>訂位</th>
+              </tr>
+            </thead>
+            <tbody class="text-center">
+              <tr v-for="seat in seats" :key="seat._id">
+                <SeatTable v-bind="seat"></SeatTable>
+              </tr>
+            </tbody>
+          </q-markup-table>
+        </div>
       </div>
-    </div>
-  </div>
+    </section>
+  </q-page>
 </template>
 
 <script setup>

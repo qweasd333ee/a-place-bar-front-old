@@ -4,7 +4,7 @@
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="drawer = !drawer" />
         <q-toolbar-title>
-          <router-link style="text-decoration: none; color: white;" to="/">一個地方</router-link>
+          <router-link style="text-decoration: none; color: white;" to="/">一個地方後台管理頁面</router-link>
         </q-toolbar-title>
       </q-toolbar>
     </q-header>

@@ -1,29 +1,39 @@
 <template>
   <q-page id="home-view">
-    <header id="section01" class="row">
-      <video autoplay muted loop class="col-12 bg-video">
+    <header id="section01" class="row items-end">
+      <video autoplay muted loop class="bg-video">
         <source src="@/assets/CarouselPic/video.mp4" type="video/mp4">
       </video>
       <div class="mask"></div>
-      <div class="container col-12 self-center q-mt-auto">
+      <div class="container q-my-auto">
         <div class="row">
           <div class="content col-12 text-center q-my-auto">
-            <h1 class="q-mb-xl">a &nbsp; place</h1>
-            <p class="q-mb-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, veritatis!</p>
-            <q-btn class="q-mb-xl" outline label="查看更多資訊" to="/about" />
+            <p class="q-mb-lg">
+              <span class="text-orange">BAR</span>
+              /RESTAURANT
+            </p>
+            <q-img class="q-mb-xl" src="@/assets/LogoPic/logo3.png" width="500px" />
+            <p class="q-mb-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, facilis ullam. A deleniti blanditiis soluta repudiandae iusto voluptas ipsum quia, debitis suscipit, eligendi voluptatibus.</p>
+            <q-btn class="q-mb-xl q-px-lg q-py-sm" outline label="查看更多資訊" to="/about" />
           </div>
         </div>
       </div>
-      <div class="container col-12 self-end q-mb-md">
+      <div class="container q-my-auto">
         <div class="row justify-around">
           <div class="col text-left">
-            <q-icon class="q-mr-lg" name="mdi-twitter" />
-            <q-icon class="q-mr-lg" name="mdi-facebook" />
-            <q-icon class="q-mr-lg" name="mdi-instagram" />
+            <a href="/">
+              <q-icon class="q-mr-lg" name="mdi-twitter" />
+            </a>
+            <a href="https://www.facebook.com/a.place.2020/">
+              <q-icon class="q-mr-lg" name="mdi-facebook" />
+            </a>
+            <a href="https://www.instagram.com/a.place_bar/">
+              <q-icon class="q-mr-lg" name="mdi-instagram" />
+            </a>
           </div>
           <div class="col text-right">
             <p>
-              <q-icon class="q-mr-md" name="mdi-map-marker" />
+              <q-icon left color="orange" class="q-mr-md" name="mdi-map-marker" />
               951台東縣綠島鄉52之1號
             </p>
           </div>

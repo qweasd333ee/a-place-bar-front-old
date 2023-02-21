@@ -1,8 +1,11 @@
 #home-view {
   #section01 {
-    position: relative;
     width: 100%;
-    height: calc(100vh - 70px);
+    height: 100vh;
+    video {
+      width: 100%;
+      height: auto;
+    }
     .bg-video {
       position: fixed;
       right: 0;
@@ -22,7 +25,8 @@
       z-index: -1;
     }
     .container {
-      max-width: 960px;
+      width: 100%;
+      max-width: 1140px;
       margin-left: auto;
       margin-right: auto;
       color: white;
@@ -31,9 +35,12 @@
       }
       .col {
         display: block;
-        cursor: pointer;
-        .q-icon:hover {
-          color: orange;
+        a{
+          text-decoration: none;
+          color: white;
+          .q-icon:hover {
+            color: orange;
+          }
         }
       }
     }
@@ -106,6 +113,16 @@
           flex: 1 0 100% !important;
           width: 0 !important;
         }
+      }
+    }
+  }
+}
+
+@media (min-width: 768px) {
+  #home-view {
+    #section01 {
+      .bg-video {
+        height: auto;
       }
     }
   }
