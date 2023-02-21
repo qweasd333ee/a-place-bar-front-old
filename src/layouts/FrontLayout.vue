@@ -80,6 +80,7 @@
     </q-header>
 
     <q-drawer
+        side="right"
         v-if="$q.screen.lt.md"
         v-model="drawer"
         show-if-above

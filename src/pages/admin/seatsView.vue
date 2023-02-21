@@ -1,7 +1,10 @@
 <template>
   <q-page class="q-pa-md">
     <div class="row">
-      <div class="col-12">
+      <h4 class="col-12 text-center">
+        座位管理
+      </h4>
+      <div class="col-12 text-right">
         <q-btn color="primary" label="新增座位" @click="openDialog(-1)" class="q-mb-md"/>
         <q-dialog v-model="form.dialog" persistent>
           <q-card style="width: 700px; max-width: 80vw;">

@@ -1,7 +1,9 @@
 <template>
   <q-page id="about-view">
     <header id="header">
-      <div class="text-white text-center text-h3">關於我們</div>
+      <div class="text-white text-center text-h3 background">
+        關於我們
+      </div>
     </header>
     <section id="section01">
       <div class="container">

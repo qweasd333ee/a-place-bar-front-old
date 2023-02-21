@@ -1,3 +1,12 @@
+@import './HomeView.scss';
+@import './LoginView.scss';
+@import './AboutView.scss';
+@import './AllProduct.scss';
+
+@import './FrontLayout.scss';
+
+@import './ProductCard.scss';
+
 @import "node_modules/vue3-img-input/src/styles/style.scss";
 $v-image-input-width: 200px !default;
 $v-image-input-height: 200px !default;

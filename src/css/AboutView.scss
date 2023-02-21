@@ -1,8 +1,20 @@
 #about-view {
   #header {
-    background: url('@/assets/CarouselPic/pic24.jpeg') no-repeat center/cover;
-    div {
+    .background {
+      position: relative;
+      background: rgba(0, 0, 0, 0.5);
       padding: 10rem 0;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('@/assets/CarouselPic/pic24.jpeg') no-repeat center/cover;
+        z-index: -1;
+      }
     }
   }
   #section01 {

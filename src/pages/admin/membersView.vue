@@ -9,7 +9,7 @@
             <tr>
               <th>帳號</th>
               <th>信箱</th>
-              <th>編輯</th>
+              <th>刪除</th>
             </tr>
           </thead>
           <tbody class="text-center">
@@ -17,7 +17,7 @@
               <td>{{ user.account }}</td>
               <td>{{ user.email }}</td>
               <td>
-                <q-btn color="primary" icon="edit" @click="deleteUser(user._id)" />
+                <q-btn color="primary" icon="mdi-trash-can" @click="deleteUser(user._id)" />
               </td>
             </tr>
           </tbody>
@@ -60,9 +60,9 @@ const deleteUser = async (id) => {
     getUsers()
   } catch (error) {
     await Swal.fire({
-      icon: 'success',
+      icon: 'error',
       title: '失敗',
-      text: (error.isAxiosError && error.response.data) ? error.response.data.message : '發生錯誤'
+      text: error?.response?.data?.message || '發生錯誤'
     })
   }
 }

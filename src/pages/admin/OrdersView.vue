@@ -1,5 +1,21 @@
 <template>
   <q-page class="q-pa-md">
+    <q-table
+            :grid="$q.screen.lt.md"
+            title="訂單管理"
+            :rows="orders"
+            :columns="columns"
+            row-key="name"
+            :filter="filter"
+            >
+        <template v-slot:top-right>
+            <q-input borderless dense debounce="300" v-model="filter" placeholder="Search">
+                <template v-slot:append>
+                <q-icon name="search" />
+                </template>
+            </q-input>
+        </template>
+    </q-table>
     <div class="row">
       <div class="col-12">
         <h5 class="text-center">訂單</h5>
@@ -33,11 +49,46 @@
 </template>
 
 <script setup>
-import { reactive } from 'vue'
+import { ref, reactive } from 'vue'
 import { apiAuth } from 'src/boot/axios'
 import Swal from 'sweetalert2'
 
-const orders = reactive([]);
+const filter = ref('')
+const orders = reactive([])
+
+const columns = [
+  {
+    name: 'ID',
+    required: true,
+    label: 'ID',
+    align: 'left',
+    field: row => row._id,
+    format: val => `${val}`,
+    sortable: true
+  },
+  {
+    name: 'date',
+    align: 'center',
+    field: row => new Date(row.date).toLocaleDateString(),
+    label: '訂單日期'
+  },
+  {
+    name: 'account',
+    align: 'center',
+    field: row => row.u_id.account,
+    label: '訂單帳戶'
+  },
+  {
+    name: 'edit',
+    label: 'total',
+    field: row => row.products.p_id.name + ' * ' + row.products.quantity,
+    sortable: true
+  }
+]
+
+for (const totalProduct in orders) {
+  console.log(totalProduct)
+}
 
 (async () => {
   try {

@@ -1,7 +1,33 @@
 <template>
   <q-page id="home-view">
     <header id="section01" class="row">
-      <div class="col-12 banner">
+      <video autoplay muted loop class="col-12 bg-video">
+        <source src="@/assets/CarouselPic/video.mp4" type="video/mp4">
+      </video>
+      <div class="mask"></div>
+      <div class="container col-12 self-center q-mt-auto">
+        <div class="row">
+          <div class="content col-12 text-center q-my-auto">
+            <h1 class="q-mb-xl">a &nbsp; place</h1>
+            <p class="q-mb-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Magni, veritatis!</p>
+            <q-btn class="q-mb-xl" outline label="查看更多資訊" to="/about" />
+          </div>
+        </div>
+      </div>
+      <div class="container col-12 self-end q-mb-md">
+        <div class="row justify-around">
+          <div class="col text-left">
+            <q-icon class="q-mr-lg" name="mdi-twitter" />
+            <q-icon class="q-mr-lg" name="mdi-facebook" />
+            <q-icon class="q-mr-lg" name="mdi-instagram" />
+          </div>
+          <div class="col text-right">
+            <p>
+              <q-icon class="q-mr-md" name="mdi-map-marker" />
+              951台東縣綠島鄉52之1號
+            </p>
+          </div>
+        </div>
       </div>
     </header>
     <section id="section02" class="row">

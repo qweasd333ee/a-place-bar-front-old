@@ -1,0 +1,29 @@
+#all-product {
+  #header {
+    .background {
+      position: relative;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10rem 0;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('@/assets/CarouselPic/pic1.jpeg') no-repeat center/cover;
+        z-index: -1;
+      }
+    }
+  }
+  #section01 {
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    .container {
+      max-width: 1100px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+}
