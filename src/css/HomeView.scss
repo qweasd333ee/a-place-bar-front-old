@@ -33,13 +33,16 @@
       .q-icon {
         font-size: 1.2rem;
       }
+      .text {
+        padding: 0 20%;
+      }
       .col {
         display: block;
         a{
           text-decoration: none;
           color: white;
           .q-icon:hover {
-            color: orange;
+            color: #E27638;
           }
         }
       }
@@ -48,8 +51,8 @@
   #section02 {
     background: #e1d0b6;
     .q-card {
-      margin: 150px;
       background: #e1d0b6;
+      padding: 5rem 2rem;
     }
   }
   #section03 {
@@ -100,6 +103,9 @@
       margin-right: auto;
       .row {
         padding-top: 2rem;
+        p {
+          font-size: 1.25rem;
+        }
       }
       .column {
         height: 1200px;
@@ -123,6 +129,11 @@
     #section01 {
       .bg-video {
         height: auto;
+      }
+    }
+    #section02 {
+      .q-card {
+        padding: 7rem 2rem;
       }
     }
   }

@@ -16,8 +16,11 @@
             <q-img src="@/assets/CarouselPic/pic18.jpeg"/>
           </div>
           <div class="col-5 q-mx-auto q-px-md self-center text-3">
-            <h4>Lorem, ipsum dolor.</h4>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio totam nemo consequatur rem unde enim sapiente reprehenderit quae excepturi minus, eius tempore facilis ipsum perspiciatis officiis, eaque, accusamus eos aspernatur.</p>
+            <h4 class="q-mb-xl">一個地方</h4>
+            <p class="text-h6">
+              秉持著生活結合工作回歸大自然的信念<br>
+              生活總是忙碌的，白晝下人們各自擁有精彩的生活，在這日新月異的時代更是拉緊發條，為生活忙碌付出、為目標努力向前。當黃昏沉落、夜幕拉下，哪怕拖著疲憊的身軀．也因夜晚伴隨著酒精昇華，把每一個人引領凝聚到了「一個地方」。
+            </p>
           </div>
         </div>
       </div>
@@ -26,7 +29,7 @@
       <div class="container">
         <div class="row">
           <div class="col-4 q-px-lg">
-            <q-card class="my-card" flat bordered>
+            <q-card class="my-card" flat>
               <q-img src="@/assets/CarouselPic/pic6.jpeg" height="300px"/>
               <q-card-section>
                 <div class="text-overline text-orange-9">Overline</div>
@@ -38,7 +41,7 @@
             </q-card>
           </div>
           <div class="col-4 q-px-lg">
-            <q-card class="my-card" flat bordered>
+            <q-card class="my-card" flat>
               <q-img src="@/assets/CarouselPic/pic7.jpeg" height="300px"/>
               <q-card-section>
                 <div class="text-overline text-orange-9">Overline</div>
@@ -50,7 +53,7 @@
             </q-card>
           </div>
           <div class="col-4 q-px-lg">
-            <q-card class="my-card" flat bordered>
+            <q-card class="my-card" flat>
               <q-img src="@/assets/CarouselPic/pic8.jpeg" height="300px"/>
               <q-card-section>
                 <div class="text-overline text-orange-9">Overline</div>

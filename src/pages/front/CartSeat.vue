@@ -1,47 +1,51 @@
 <template>
-  <q-page class="q-pa-md">
-    <div class="row">
-      <div class="col-12 text-center text-h5">
-        訂位
+  <q-page id="card-seat">
+    <header id="header">
+      <div class="text-white text-center text-h3 background">訂位確認</div>
+    </header>
+    <section id="section01">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 q-mb-xl">
+            <q-markup-table>
+              <thead class="text-center">
+                <tr>
+                  <th>座位編號</th>
+                  <th>樓層</th>
+                  <th>分類</th>
+                  <th>座位數</th>
+                  <th>訂位人數</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+                <tr v-for="(seat, idx) in CartSeat" :key="seat._id" :class="{'bg-red': !seat.s_id.book}">
+                  <td>{{ seat.s_id.name }}</td>
+                  <td>{{ seat.s_id.floor }}</td>
+                  <td>{{ seat.s_id.category }}</td>
+                  <td>{{ seat.s_id.seatNumber }}</td>
+                  <td>
+                    <q-btn color="primary" label="-" @click="updateCart(idx, -1)" />
+                    &nbsp;{{ seat.quantity }}&nbsp;
+                    <q-btn color="primary" label="+" @click="updateCart(idx, 1)"/>
+                  </td>
+                  <td>
+                    <q-btn color="primary" @click="updateCart(idx, seat.quantity * -1)" label="刪除" />
+                  </td>
+                </tr>
+                <tr v-if="CartSeat.length === 0">
+                  <td class="text-center" colspan="6">沒有訂位</td>
+                </tr>
+              </tbody>
+            </q-markup-table>
+          </div>
+          <div class="col-12 text-center">
+            <h5 class="q-mb-lg text-white">總人數 {{ totalPerson }}</h5>
+            <q-btn class="q-mb-lg" color="primary" label="訂位" :disabled="!canBooking" @click="onBookingBtnClick" />
+          </div>
+        </div>
       </div>
-      <div class="col-12">
-        <q-markup-table>
-          <thead class="text-center">
-            <tr>
-              <th>座位編號</th>
-              <th>樓層</th>
-              <th>分類</th>
-              <th>座位數</th>
-              <th>訂位人數</th>
-              <th>操作</th>
-            </tr>
-          </thead>
-          <tbody class="text-center">
-            <tr v-for="(seat, idx) in CartSeat" :key="seat._id" :class="{'bg-red': !seat.s_id.book}">
-              <td>{{ seat.s_id.name }}</td>
-              <td>{{ seat.s_id.floor }}</td>
-              <td>{{ seat.s_id.category }}</td>
-              <td>{{ seat.s_id.seatNumber }}</td>
-              <td>
-                <q-btn color="primary" label="-" @click="updateCart(idx, -1)" />
-                &nbsp;{{ seat.quantity }}&nbsp;
-                <q-btn color="primary" label="+" @click="updateCart(idx, 1)"/>
-              </td>
-              <td>
-                <q-btn color="primary" @click="updateCart(idx, seat.quantity * -1)" label="刪除" />
-              </td>
-            </tr>
-            <tr v-if="CartSeat.length === 0">
-              <td class="text-center" colspan="6">沒有訂位</td>
-            </tr>
-          </tbody>
-        </q-markup-table>
-      </div>
-      <div class="col-12 text-center">
-        <h5>總人數 {{ totalPerson }}</h5>
-        <q-btn color="primary" label="訂位" :disabled="!canBooking" @click="onBookingBtnClick" />
-      </div>
-    </div>
+    </section>
   </q-page>
 </template>
 

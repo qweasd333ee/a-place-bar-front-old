@@ -4,56 +4,88 @@
     height: 70px;
     transition: background-color 0.3s ease-in-out;
     color: white;
-    .container {
-      max-width: 1140px;
-      margin-left: auto;
-      margin-right: auto;
-      .q-toolbar {
-        height: 70px;
-        img {
-          max-width: 150px;
-        }
-        .toolbar-left-link {
-          .q-btn {
-            font-size: 1.2rem;
-            &:hover {
-              color: #E27638;
-            }
+    .q-toolbar {
+      height: 70px;
+      img {
+        max-width: 150px;
+      }
+      .toolbar-left-link {
+        .q-btn {
+          font-size: 1.2rem;
+          &:hover {
+            color: #E27638;
           }
         }
-        .toolbar-right-link {
-          .q-btn {
-            font-size: 1.2rem;
-            &:hover {
-              color: #E27638;
-            }
+      }
+      .toolbar-right-link {
+        .q-btn {
+          font-size: 1.2rem;
+          &:hover {
+            color: #E27638;
           }
         }
-        .q-toolbar__title {
-          text-align: left;
-        }
+      }
+      .q-toolbar__title {
+        text-align: left;
       }
     }
   }
   .q-page-container {
     padding-top: 0 !important;
   }
+  footer {
+    height: 200px;
+    padding: 1.5% 2%;
+    .footer {
+      .footerCol {
+        padding-left: 5%;
+        .footerLogo {
+          width: 70px;
+          padding-bottom: 10%;
+        }
+        .footerIcons {
+          font-size: 1.2rem;
+          a {
+            color: white;
+            text-decoration: none;
+            &:hover {
+              color: #E27638;
+            }
+          }
+          .q-icon {
+            padding-right: 2%;
+          }
+        }
+      }
+      .contact {
+        
+        .q-icon {
+          font-size: 1.2rem;
+          padding-right: 2%;
+        }
+      }
+    }
+  }
 }
-.black {
-  background-color: black;
+.white {
+  background-color: white;
+  .q-btn {
+    color: black;
+  }
 }
 .transparent {
   background-color: transparent;
+  .q-btn {
+    color: white;
+  }
 }
 
 @media (min-width: 1024px) {
   #front-layout {
     #navbar {
-      .container {
-        .q-toolbar {
-          .q-toolbar__title {
-            text-align: center;
-          }
+      .q-toolbar {
+        .q-toolbar__title {
+          text-align: center;
         }
       }
     }

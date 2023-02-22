@@ -18,12 +18,20 @@
     }
   }
   #section01 {
+    background-color: #20241a;
     padding-top: 5rem;
     padding-bottom: 5rem;
-    .container {
-      max-width: 1100px;
-      margin-left: auto;
-      margin-right: auto;
+    .q-card {
+      .q-tabs__content {
+        padding: 15px 0;
+        background-color: #e1d0b6;
+        .q-tab__label {
+          font-size: 1rem;
+        }
+      }
+      .q-tab-panels {
+        background-color: #e1d0b6;
+      }
     }
   }
 }

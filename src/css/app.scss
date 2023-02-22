@@ -5,6 +5,12 @@
 @import './AboutView.scss';
 @import './AllProduct.scss';
 @import './AllSeat.scss';
+@import './OneProduct.scss';
+@import './OneSeat.scss';
+@import './CardProduct.scss';
+@import './CardSeat.scss';
+@import './OrdersView.scss';
+@import './BookingsView.scss';
 
 @import './FrontLayout.scss';
 
@@ -29,3 +35,35 @@ body {
 .swal2-container {
   z-index: 7000 !important;
 }
+
+.container {
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+
+
+
+

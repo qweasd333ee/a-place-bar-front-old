@@ -74,6 +74,16 @@ const routes = [
         }
       },
       {
+        path: 'seats/:id',
+        name: 'oneSeat',
+        component: () => import('pages/front/OneSeat.vue'),
+        meta: {
+          title: '一個地方 | 線上訂位',
+          login: false,
+          admin: false
+        }
+      },
+      {
         path: 'CartSeat',
         name: 'CartSeat',
         component: () => import('pages/front/CartSeat.vue'),

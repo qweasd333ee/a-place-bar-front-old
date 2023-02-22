@@ -1,0 +1,62 @@
+#one-seat {
+  #header {
+    .background {
+      position: relative;
+      background: rgba(0, 0, 0, 0.5);
+      padding: 10rem 0;
+      &::before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url('@/assets/CarouselPic/pic1.jpeg') no-repeat center/cover;
+        z-index: -1;
+      }
+    }
+  }
+  #section01 {
+    background-color: #20241a;
+    padding-top: 5rem;
+    padding-bottom: 5rem;
+    .container {
+      .q-img__image {
+        padding: 2rem;
+      }
+    }
+    #card {
+      height: 100%;
+      background-color: #e1d0b6;
+      .q-card__section {
+        height: 100%;
+        p {
+          font-size: 1.2rem;
+        }
+        .q-form {
+          // flex-grow: 1;
+          margin-top: auto;
+          margin-bottom: auto;
+          justify-self: end;
+          .q-btn {
+            margin: auto;
+            // background: transparent !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 1024px) {
+  #one-seat {
+    #section01 {
+      .container {
+        .q-img__image {
+          padding: 0;
+        }
+      }
+    }
+  }
+}

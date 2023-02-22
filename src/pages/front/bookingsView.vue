@@ -1,33 +1,38 @@
 <template>
-  <q-page class="q-pa-md">
-    <div class="row">
-      <div class="col-12">
-        <h5 class="text-center">訂位清單
-        </h5>
-        <q-markup-table>
-          <thead class="text-center">
-            <tr>
-              <th>ID</th>
-              <th>日期</th>
-              <th>訂位總人數</th>
-              <th>座位編號</th>
-            </tr>
-          </thead>
-          <tbody class="text-center">
-            <tr v-for="booking in bookings" :key="booking._id">
-              <td>{{ booking._id }}</td>
-              <td>{{ new Date(booking.date).toLocaleDateString() }}</td>
-              <td>{{ booking.totalPerson }}</td>
-              <td>
-                <div v-for="seat in booking.seats" :key="seat._id">
-                  {{ seat.s_id.name }}
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </q-markup-table>
+  <q-page id="bookings">
+    <header id="header">
+      <div class="text-white text-center text-h3 background">訂位清單</div>
+    </header>
+    <section id="section01">
+      <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <q-markup-table>
+              <thead class="text-center">
+                <tr>
+                  <th>ID</th>
+                  <th>日期</th>
+                  <th>訂位總人數</th>
+                  <th>座位編號</th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+                <tr v-for="booking in bookings" :key="booking._id">
+                  <td>{{ booking._id }}</td>
+                  <td>{{ new Date(booking.date).toLocaleDateString() }}</td>
+                  <td>{{ booking.totalPerson }}</td>
+                  <td>
+                    <div v-for="seat in booking.seats" :key="seat._id">
+                      {{ seat.s_id.name }}
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </q-markup-table>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </q-page>
 </template>
 

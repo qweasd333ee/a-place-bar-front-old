@@ -1,37 +1,39 @@
 <template>
-  <div class="q-pa-md" id="LoginView">
+  <q-page id="LoginView">
     <div class="bg-left">
       <q-img src="../../assets/CarouselPic/pic1.jpeg"></q-img>
     </div>
-    <q-card class="row">
-      <div class="col-12">
-        <q-tabs v-model="tab" dense class="text-grey" active-color="primary" indicator-color="primary" narrow-indicator align="justify">
-          <q-tab name="登入" label="登入" />
-          <q-tab name="註冊" label="註冊" />
-        </q-tabs>
-      </div>
-      <div class="col-12 column form">
-        <q-tab-panels v-model="tab" animated >
-          <q-tab-panel name="登入" >
-            <q-form v-model='valid' @submit='login' class="column">
-              <q-input dense v-model="loginForm.account" label="帳號" :rules="rules.account" maxlength="20" />
-              <q-input dense v-model="loginForm.password" label="密碼" :rules="rules.password" maxlength="20" />
-              <q-btn dense type="submit" size="22px" color="secondary" label="登入" />
-            </q-form>
-          </q-tab-panel>
-          <q-tab-panel name="註冊">
-            <q-form v-model='valid' @submit='register' class="column">
-              <q-input dense v-model="registerForm.account" label="帳號" :rules="rules.account" maxlength="20" />
-              <q-input dense v-model="registerForm.email" label="信箱" :rules="rules.email" />
-              <q-input dense v-model="registerForm.password" label="密碼" :rules="rules.password" maxlength="20" />
-              <q-input dense v-model="registerForm.passwordConfirm" label="確認密碼" :rules="rules.passwordConfirm" maxlength="20" />
-              <q-btn dense type="submit" size="22px" color="secondary" label="註冊" />
-            </q-form>
-          </q-tab-panel>
-        </q-tab-panels>
-      </div>
-    </q-card>
-  </div>
+    <div class="container">
+      <q-card class="row">
+        <div class="col-12 tab">
+          <q-tabs v-model="tab" dense class="text-grey" active-color="primary" indicator-color="primary" narrow-indicator align="justify">
+            <q-tab name="登入" label="登入" />
+            <q-tab name="註冊" label="註冊" />
+          </q-tabs>
+        </div>
+        <div class="col-12 column form">
+          <q-tab-panels v-model="tab" animated >
+            <q-tab-panel name="登入" >
+              <q-form v-model='valid' @submit='login' class="column">
+                <q-input dense v-model="loginForm.account" label="帳號" :rules="rules.account" maxlength="20" />
+                <q-input dense v-model="loginForm.password" label="密碼" :rules="rules.password" maxlength="20" />
+                <q-btn dense type="submit" size="22px" color="secondary" label="登入" />
+              </q-form>
+            </q-tab-panel>
+            <q-tab-panel name="註冊">
+              <q-form v-model='valid' @submit='register' class="column">
+                <q-input dense v-model="registerForm.account" label="帳號" :rules="rules.account" maxlength="20" />
+                <q-input dense v-model="registerForm.email" label="信箱" :rules="rules.email" />
+                <q-input dense v-model="registerForm.password" label="密碼" :rules="rules.password" maxlength="20" />
+                <q-input dense v-model="registerForm.passwordConfirm" label="確認密碼" :rules="rules.passwordConfirm" maxlength="20" />
+                <q-btn dense type="submit" size="22px" color="secondary" label="註冊" />
+              </q-form>
+            </q-tab-panel>
+          </q-tab-panels>
+        </div>
+      </q-card>
+    </div>
+  </q-page>
 </template>
 
 <script setup>

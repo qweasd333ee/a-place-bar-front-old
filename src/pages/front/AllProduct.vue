@@ -5,7 +5,7 @@
     </header>
     <section id="section01">
       <div class="container">
-        <div class="row justify-center">
+        <div class="row justify-center text-white">
           <div class="col-12 col-md-8 col-lg-6 text-center">
             <h4 class="q-mb-md">餐點分類</h4>
             <p class="q-mb-xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat soluta dignissimos autem sit ullam cumque, possimus ducimus rerum dolorem veniam labore sapiente animi voluptas, dolor eligendi quae inventore. Corrupti, accusamus?</p>
@@ -13,7 +13,7 @@
         </div>
         <div class="row">
           <q-card flat class="col-12">
-            <q-tabs v-model="tab" dense class="text-grey q-mb-lg" active-color="primary" indicator-color="primary" narrow-indicator align="center">
+            <q-tabs v-model="tab" dense active-color="primary" indicator-color="primary" narrow-indicator align="center">
               <q-tab name="shot" label="shot" />
               <q-tab name="茶酒" label="茶酒" />
               <q-tab name="特調" label="特調" />
@@ -26,7 +26,9 @@
             <q-tab-panels v-model="tab" animated >
               <q-tab-panel class="row" :name="tab">
                 <div v-for="product in filterData" :key="product" class="col-12 col-md-6">
+                <div class=" q-px-md">
                   <ProductCard v-bind="product"></ProductCard>
+                </div>
                 </div>
               </q-tab-panel>
             </q-tab-panels>

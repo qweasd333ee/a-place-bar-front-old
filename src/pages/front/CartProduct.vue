@@ -1,49 +1,53 @@
 <template>
-  <q-page class="q-pa-md">
-    <div class="row">
-      <div class="col-12 text-center text-h5">
-        訂餐
+  <q-page id="card-product">
+    <header id="header">
+      <div class="text-white text-center text-h3 background">訂餐確認</div>
+    </header>
+    <section id="section01">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 q-mb-xl">
+            <q-markup-table>
+              <thead class="text-center">
+                <tr>
+                  <th>圖片</th>
+                  <th>名稱</th>
+                  <th>單價</th>
+                  <th>數量</th>
+                  <th>小計</th>
+                  <th>操作</th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+                <tr v-for="(product, idx) in CartProduct" :key="product._id" :class="{'bg-red': !product.p_id.sell}">
+                  <td>
+                    <q-img :src="product.p_id.image" :ratio="1" width="150px"/>
+                  </td>
+                  <td>{{ product.p_id.name }}</td>
+                  <td>{{ product.p_id.price }}</td>
+                  <td>
+                    <q-btn color="primary" label="-" @click="updateCart(idx, -1)" />
+                    &nbsp;{{ product.quantity }}&nbsp;
+                    <q-btn color="primary" label="+" @click="updateCart(idx, 1)"/>
+                  </td>
+                  <td>{{ product.quantity * product.p_id.price }}</td>
+                  <td>
+                    <q-btn color="primary" @click="updateCart(idx, product.quantity * -1)" label="刪除" />
+                  </td>
+                </tr>
+                <tr v-if="CartProduct.length === 0">
+                  <td class="text-center" colspan="6">沒有商品</td>
+                </tr>
+              </tbody>
+            </q-markup-table>
+          </div>
+          <div class="col-12 text-center">
+            <h5 class="q-mb-lg text-white">總金額 {{ totalPrice }}</h5>
+            <q-btn class="q-mb-lg" color="primary" label="結帳" :disabled="!canCheckout" @click="onCheckoutBtnClick" />
+          </div>
+        </div>
       </div>
-      <div class="col-12">
-        <q-markup-table>
-          <thead class="text-center">
-            <tr>
-              <th>圖片</th>
-              <th>名稱</th>
-              <th>單價</th>
-              <th>數量</th>
-              <th>小計</th>
-              <th>操作</th>
-            </tr>
-          </thead>
-          <tbody class="text-center">
-            <tr v-for="(product, idx) in CartProduct" :key="product._id" :class="{'bg-red': !product.p_id.sell}">
-              <td>
-                <q-img :src="product.p_id.image" :ratio="1" width="150px"/>
-              </td>
-              <td>{{ product.p_id.name }}</td>
-              <td>{{ product.p_id.price }}</td>
-              <td>
-                <q-btn color="primary" label="-" @click="updateCart(idx, -1)" />
-                &nbsp;{{ product.quantity }}&nbsp;
-                <q-btn color="primary" label="+" @click="updateCart(idx, 1)"/>
-              </td>
-              <td>{{ product.quantity * product.p_id.price }}</td>
-              <td>
-                <q-btn color="primary" @click="updateCart(idx, product.quantity * -1)" label="刪除" />
-              </td>
-            </tr>
-            <tr v-if="CartProduct.length === 0">
-              <td class="text-center" colspan="6">沒有商品</td>
-            </tr>
-          </tbody>
-        </q-markup-table>
-      </div>
-      <div class="col-12 text-center">
-        <h5>總金額 {{ totalPrice }}</h5>
-        <q-btn color="primary" label="結帳" :disabled="!canCheckout" @click="onCheckoutBtnClick" />
-      </div>
-    </div>
+    </section>
   </q-page>
 </template>
 

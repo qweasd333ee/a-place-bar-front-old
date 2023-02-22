@@ -1,13 +1,14 @@
 <template>
   <q-card class="ProductCard row items-center q-py-md" flat square>
-    <div class="col-3 q-px-md">
+    <div class="col-2">
       <q-img :src="image" :ratio="1" fit="cover"/>
     </div>
-    <div class="col-7 q-px-md">
+    <div class="col-8 q-px-md">
       <q-item-label class="text-h5 q-mb-md">
         <router-link
         class="text-primary"
-        style="text-decoration: none;" :to="'/products/' + _id">{{ name }}</router-link>
+        style="text-decoration: none;" :to="'/products/' + _id">{{ name }}
+        </router-link>
       </q-item-label>
       <q-item-label class="text-body1">
         <p style="white-space: pre;">{{ description }}</p>

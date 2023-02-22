@@ -5,20 +5,19 @@
         <source src="@/assets/CarouselPic/video.mp4" type="video/mp4">
       </video>
       <div class="mask"></div>
-      <div class="container q-my-auto">
-        <div class="row">
+      <div class="container q-mt-xl">
+        <div class="row justify-center">
           <div class="content col-12 text-center q-my-auto">
             <p class="q-mb-lg">
               <span class="text-orange">BAR</span>
               /RESTAURANT
             </p>
             <q-img class="q-mb-xl" src="@/assets/LogoPic/logo3.png" width="500px" />
-            <p class="q-mb-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, facilis ullam. A deleniti blanditiis soluta repudiandae iusto voluptas ipsum quia, debitis suscipit, eligendi voluptatibus.</p>
-            <q-btn class="q-mb-xl q-px-lg q-py-sm" outline label="查看更多資訊" to="/about" />
+            <p class="text q-mb-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, facilis ullam. A deleniti blanditiis soluta repudiandae iusto voluptas ipsum quia, debitis suscipit, eligendi voluptatibus.</p>
           </div>
         </div>
       </div>
-      <div class="container q-my-auto">
+      <div class="container">
         <div class="row justify-around">
           <div class="col text-left">
             <a href="/">
@@ -43,10 +42,8 @@
     <section id="section02" class="row">
       <div class="col-12">
         <q-card square flat class="text-center">
-          <q-card-section>
-            <div class="text-h4">
-              酒逢知己飲，詩向會人吟。
-            </div>
+          <q-card-section class="text-h4">
+            酒逢知己飲，詩向會人吟
           </q-card-section>
           <q-card-section class="text-h6">
             素未謀面的我們，此時此刻都在這段時間內一起享受綠島獨特的情調，在「一個地方」把酒言歡，感受著生活的美好，工作的充實，以及回歸自然的本質。
@@ -55,10 +52,10 @@
       </div>
     </section>
     <section id="section03" class="row">
-      <div class="col-5">
-        <q-img class="cover" src="@/assets/CarouselPic/pic8.jpeg" />
+      <div class="col-12 col-sm-5">
+        <q-img class="cover" src="@/assets/CarouselPic/pic10.jpeg" />
       </div>
-      <div class="col-7">
+      <div class="col-12 col-sm-7">
         <q-card square flat class="column flex-center">
           <q-card-section>
             <div class="text-h4">
@@ -74,9 +71,9 @@
         </q-card>
         <q-card square flat class="column flex-center">
           <q-card-section>
-            <div class="text-h6">營業時間</div>
+            <div class="text-h4">營業時間</div>
           </q-card-section>
-          <q-card-section>
+          <q-card-section class="text-h6">
             每日19:30~01:00
           </q-card-section>
           <q-card-section>
@@ -86,28 +83,29 @@
       </div>
     </section>
     <section id="section04" class="row">
-      <div class="col-7">
-        <q-card class="column flex-center" square flat style="height: 100%;">
+      <div class="col-12 col-sm-7">
+        <q-card class="column flex-center text-center" square flat style="height: 100%;">
           <q-card-section class="text-h6">
-            菜單
+            一杯酒的用心 除了調製過程外 還有恰到好處的裝飾 讓喝酒時視覺味覺嗅覺堆疊出多重層次的饗宴 我們調的不是酒 是愛
           </q-card-section>
           <q-card-section>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit
-          </q-card-section>
-          <q-card-section>
-            <q-btn outline label="查看更多資訊" to="/product" />
+            <q-btn outline label="餐點介紹" to="/product" />
           </q-card-section>
         </q-card>
       </div>
-      <div class="col-5 pic">
-        <q-img class="cover" src="@/assets/CarouselPic/pic9.jpeg" />
+      <div class="col-12 col-sm-5 pic">
+        <q-img class="cover" src="@/assets/BartendingPic/酒13.jpeg" />
       </div>
     </section>
     <section id="section05">
       <div class="container">
         <div class="row">
-          <h4 class="col-12 text-center">lorem feg</h4>
-          <p class="col-12 text-center">Lorem ipsum dolor sit amet.</p>
+          <h4 class="col-12 text-center q-mb-lg">關於</h4>
+          <p class="col-12 text-center q-mb-xl">
+            一個人可以走得很快 但一群人可以走得很遠
+            <br>
+            願那些相聚與重逢，能留在你們心裡的一個地方
+          </p>
         </div>
         <div class="column">
           <img class="cell" src="@/assets/CarouselPic/pic24.jpeg">

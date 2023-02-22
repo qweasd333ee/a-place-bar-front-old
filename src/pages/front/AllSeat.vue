@@ -12,7 +12,7 @@
                 <th>座位編號</th>
                 <th>樓層</th>
                 <th>分類</th>
-                <th>位數</th>
+                <th>座位上限</th>
                 <th>訂位</th>
               </tr>
             </thead>

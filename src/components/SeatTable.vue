@@ -1,10 +1,15 @@
 <template>
-  <td>{{ name }}</td>
+  <td>
+    <router-link
+        class="text-primary"
+        style="text-decoration: none;" :to="'/seats/' + _id">{{ name }}
+    </router-link>
+  </td>
   <td>{{ floor }}</td>
   <td>{{ category }}</td>
   <td>{{ seatNumber }}</td>
   <td>
-    <q-btn color="primary" icon="chair" :label="!using ? '加入訂位' : '使用中'" :disabled="using" @click="editCartSeat({_id, quantity: 1})" />
+    <q-btn color="primary" icon="chair" :label="!using ? '加入訂位' : '使用中'" :disabled="using" @click="editCartSeat({_id, quantity: seatNumber})" />
   </td>
 </template>
 
