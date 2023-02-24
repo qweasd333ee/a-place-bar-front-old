@@ -1,35 +1,44 @@
 <template>
-  <q-page class="q-pa-md">
-    <div class="row">
-      <div class="col-12">
-        <h5 class="text-center">訂位
-        </h5>
-        <q-markup-table>
-          <thead class="text-center">
-            <tr>
-              <th>ID</th>
-              <th>日期</th>
-              <th>使用者</th>
-              <th>訂位總人數</th>
-              <th>座位編號</th>
-            </tr>
-          </thead>
-          <tbody class="text-center">
-            <tr v-for="booking in bookings" :key="booking._id">
-              <td>{{ booking._id }}</td>
-              <td>{{ new Date(booking.date).toLocaleDateString() }}</td>
-              <td>{{ booking.u_id.account }}</td>
-              <td>{{ booking.totalPerson }}</td>
-              <td>
-                <div v-for="seat in booking.seats" :key="seat._id">
-                  {{ seat.s_id.name }}
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </q-markup-table>
+  <q-page id="admin-bookings-view">
+    <section id="section01">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center text-white text-h3 text">訂位管理</div>
+          <div class="col-12">
+            <q-markup-table>
+              <thead class="text-center">
+                <tr>
+                  <th>ID</th>
+                  <th>使用者</th>
+                  <th>姓名</th>
+                  <th>日期、時間</th>
+                  <th>電話</th>
+                  <th>信箱</th>
+                  <th>訂位人數</th>
+                  <th>座位編號</th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+                <tr v-for="booking in bookings" :key="booking._id">
+                  <td>{{ booking._id }}</td>
+                  <td>{{ booking.u_id.account }}</td>
+                  <td>{{ booking.seats[0].name }}</td>
+                  <td>{{ new Date(booking.seats[0].date).toLocaleString() }}</td>
+                  <td>{{ booking.seats[0].phone }}</td>
+                  <td>{{ booking.seats[0].email }}</td>
+                  <td>{{ booking.seats[0].s_id.seatNumber }}</td>
+                  <td>
+                    <div v-for="seat in booking.seats" :key="seat._id">
+                      {{ seat.s_id.name }}
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </q-markup-table>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </q-page>
 </template>
 

@@ -1,34 +1,38 @@
 <template>
-  <q-page class="q-pa-md">
-    <div class="row">
-      <div class="col-12">
-        <h5 class="text-center">訂單</h5>
-        <q-markup-table>
-          <thead class="text-center">
-            <tr>
-              <th>ID</th>
-              <th>日期</th>
-              <th>使用者</th>
-              <th>金額</th>
-              <th>商品</th>
-            </tr>
-          </thead>
-          <tbody class="text-center">
-            <tr v-for="order in orders" :key="order._id">
-              <td>{{ order._id }}</td>
-              <td>{{ new Date(order.date).toLocaleDateString() }}</td>
-              <td>{{ order.u_id.account }}</td>
-              <td>{{ order.totalPrice }}</td>
-              <td>
-                <div v-for="product in order.products" :key="product._id">
-                  {{ product.p_id.name + ' * ' + product.quantity }}
-                </div>
-              </td>
-            </tr>
-          </tbody>
-        </q-markup-table>
+  <q-page id="admin-orders-view">
+    <section id="section01">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center text-white text-h3 text">訂餐管理</div>
+          <div class="col-12">
+            <q-markup-table>
+              <thead class="text-center">
+                <tr>
+                  <th>ID</th>
+                  <th>日期</th>
+                  <th>使用者</th>
+                  <th>金額</th>
+                  <th>商品</th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+                <tr v-for="order in orders" :key="order._id">
+                  <td>{{ order._id }}</td>
+                  <td>{{ new Date(order.date).toLocaleDateString() }}</td>
+                  <td>{{ order.u_id.account }}</td>
+                  <td>{{ order.totalPrice }}</td>
+                  <td>
+                    <div v-for="product in order.products" :key="product._id">
+                      {{ product.p_id.name + ' * ' + product.quantity }}
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </q-markup-table>
+          </div>
+        </div>
       </div>
-    </div>
+    </section>
   </q-page>
 </template>
 

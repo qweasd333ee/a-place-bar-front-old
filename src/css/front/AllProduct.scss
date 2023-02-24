@@ -1,4 +1,4 @@
-#bookings {
+#all-product {
   #header {
     .background {
       position: relative;
@@ -21,19 +21,16 @@
     background-color: #20241a;
     padding-top: 5rem;
     padding-bottom: 5rem;
-    .container {
-      .q-markup-table {
-        background-color: #e1d0b6;
-        thead {
-          th {
-            font-size: 1.2rem;
-          }
+    .q-card {
+      .q-tabs__content {
+        padding: 15px 0;
+        background-color: #f4ebe4;
+        .q-tab__label {
+          font-size: 1rem;
         }
-        tbody {
-          td {
-            font-size: 1rem;
-          }
-        }
+      }
+      .q-tab-panels {
+        background-color: #f4ebe4;
       }
     }
   }

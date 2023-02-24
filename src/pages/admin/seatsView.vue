@@ -1,70 +1,72 @@
 <template>
-  <q-page class="q-pa-md">
-    <div class="row">
-      <h4 class="col-12 text-center">
-        座位管理
-      </h4>
-      <div class="col-12 text-right">
-        <q-btn color="primary" label="新增座位" @click="openDialog(-1)" class="q-mb-md"/>
-        <q-dialog v-model="form.dialog" persistent>
-          <q-card style="width: 700px; max-width: 80vw;">
-            <q-toolbar class="bg-primary text-white">
-              <q-toolbar-title>
-                <div class="text-center">{{ form._id.length > 0 ? '編輯座位' : '新增座位' }}</div>
-              </q-toolbar-title>
-            </q-toolbar>
-            <q-form v-model="form.valid" @submit="submit">
-              <q-card class="q-pa-md">
-                <q-card-section class="q-pt-none">
-                  <q-input filled v-model="form.name" autofocus label="編號" :rules="[rules.required]" />
-                  <q-input filled v-model="form.floor" autofocus label="樓層" :rules="[rules.required]" />
-                  <q-select style="margin-bottom: 1.2rem;" filled v-model="form.category" :options="category" label="分類" />
-                  <q-input filled v-model="form.seatNumber" autofocus label="位數" :rules="[rules.required]" />
-                  <q-checkbox style="margin-bottom: 1.2rem;" v-model="form.book" label="是否開放" />
-                  <q-checkbox style="margin-bottom: 1.2rem;" v-model="form.using" label="是否使用中" />
-                </q-card-section>
-                <q-card-actions align="center">
-                  <q-btn type="submit" label="確定" color="positive" />
-                  <q-btn @click="form.dialog = false" label="取消" color="negative"/>
-                </q-card-actions>
+  <q-page id="admin-seats-view">
+    <section id="section01">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center text-white text-h3 text">座位管理</div>
+          <div class="col-12 text-right">
+            <q-btn color="primary" label="新增座位" @click="openDialog(-1)" class="q-mb-md"/>
+            <q-dialog v-model="form.dialog" persistent>
+              <q-card style="width: 700px; max-width: 80vw;">
+                <q-toolbar class="bg-primary text-white">
+                  <q-toolbar-title>
+                    <div class="text-center">{{ form._id.length > 0 ? '編輯座位' : '新增座位' }}</div>
+                  </q-toolbar-title>
+                </q-toolbar>
+                <q-form v-model="form.valid" @submit="submit">
+                  <q-card class="q-pa-md">
+                    <q-card-section class="q-pt-none">
+                      <q-input filled v-model="form.name" autofocus label="編號" :rules="[rules.required]" />
+                      <q-input filled v-model="form.floor" autofocus label="樓層" :rules="[rules.required]" />
+                      <q-select style="margin-bottom: 1.2rem;" filled v-model="form.category" :options="category" label="分類" />
+                      <q-input filled v-model="form.seatNumber" autofocus label="位數" :rules="[rules.required]" />
+                      <q-checkbox style="margin-bottom: 1.2rem;" v-model="form.book" label="是否開放" />
+                      <q-checkbox style="margin-bottom: 1.2rem;" v-model="form.using" label="是否使用中" />
+                    </q-card-section>
+                    <q-card-actions align="center">
+                      <q-btn type="submit" label="確定" color="positive" />
+                      <q-btn @click="form.dialog = false" label="取消" color="negative"/>
+                    </q-card-actions>
+                  </q-card>
+                </q-form>
               </q-card>
-            </q-form>
-          </q-card>
-        </q-dialog>
+            </q-dialog>
+          </div>
+          <div class="col-12">
+            <q-markup-table>
+              <thead class="text-center">
+                <tr>
+                  <th>編號</th>
+                  <th>樓層</th>
+                  <th>位數</th>
+                  <th>分類</th>
+                  <th>是否開放</th>
+                  <th>是否使用中</th>
+                  <th>編輯</th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+                <tr v-for="(seat, idx) in seats" :key="seat._id">
+                  <td>{{ seat.name }}</td>
+                  <td>{{ seat.floor }}</td>
+                  <td>{{ seat.seatNumber }}</td>
+                  <td>{{ seat.category }}</td>
+                  <td>
+                    <q-toggle v-model="seat.book" color="green"/>
+                  </td>
+                  <td>
+                    <q-toggle v-model="seat.using" color="green"/>
+                  </td>
+                  <td>
+                    <q-btn color="primary" icon="edit" @click="openDialog(idx)" />
+                  </td>
+                </tr>
+              </tbody>
+            </q-markup-table>
+          </div>
+        </div>
       </div>
-      <div class="col-12">
-        <q-markup-table>
-          <thead class="text-center">
-            <tr>
-              <th>編號</th>
-              <th>樓層</th>
-              <th>位數</th>
-              <th>分類</th>
-              <th>是否開放</th>
-              <th>是否使用中</th>
-              <th>編輯</th>
-            </tr>
-          </thead>
-          <tbody class="text-center">
-            <tr v-for="(seat, idx) in seats" :key="seat._id">
-              <td>{{ seat.name }}</td>
-              <td>{{ seat.floor }}</td>
-              <td>{{ seat.seatNumber }}</td>
-              <td>{{ seat.category }}</td>
-              <td>
-                <q-toggle v-model="seat.book" color="green"/>
-              </td>
-              <td>
-                <q-toggle v-model="seat.using" color="green"/>
-              </td>
-              <td>
-                <q-btn color="primary" icon="edit" @click="openDialog(idx)" />
-              </td>
-            </tr>
-          </tbody>
-        </q-markup-table>
-      </div>
-    </div>
+    </section>
   </q-page>
 </template>
 

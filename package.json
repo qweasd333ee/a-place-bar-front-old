@@ -19,8 +19,10 @@
     "sweetalert2": "^11.7.1",
     "validator": "^13.9.0",
     "vue": "^3.0.0",
+    "vue-easy-pie-chart": "^1.0.3",
     "vue-router": "^4.0.0",
-    "vue3-img-input": "^1.2.1"
+    "vue3-img-input": "^1.2.1",
+    "vue3-tailwind-pie-chart": "^0.0.4"
   },
   "devDependencies": {
     "@quasar/app-vite": "^1.0.0",

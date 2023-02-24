@@ -1,0 +1,20 @@
+#member-layout {
+  .q-header {
+    background-color: black;
+    img {
+      max-width: 150px;
+      margin-top: 7px;
+    }
+  }
+  .q-badge--floating {
+    top: 2px;
+    right: 10px;
+  }
+  .q-drawer {
+    border-right: 1px solid #f4ebe4;
+    .q-drawer__content {
+      background: #20241a !important;
+      color: white;
+    }
+  }
+}

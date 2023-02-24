@@ -36,6 +36,9 @@
       .text {
         padding: 0 20%;
       }
+      img {
+        filter: drop-shadow();
+      }
       .col {
         display: block;
         a{
@@ -49,9 +52,9 @@
     }
   }
   #section02 {
-    background: #e1d0b6;
+    background: #f4ebe4;
     .q-card {
-      background: #e1d0b6;
+      background: #f4ebe4;
       padding: 5rem 2rem;
     }
   }
@@ -66,7 +69,7 @@
     .q-card:nth-child(1) {
       height: 50%;
       text-align: center;
-      background: #e1d0b6;
+      background: #f4ebe4;
       .q-btn {
         &:hover {
           background: #20241a !important;
@@ -81,7 +84,7 @@
       color: white;
       .q-btn {
         &:hover {
-          background: #e1d0b6 !important;
+          background: #f4ebe4 !important;
           color: black;
         }
       }
@@ -95,7 +98,7 @@
     }
   }
   #section05 {
-    background: #e1d0b6;
+    background: #f4ebe4;
     .container {
       height: 1200px;
       max-width: 840px;

@@ -44,26 +44,6 @@ const routes = [
         }
       },
       {
-        path: 'CartProduct',
-        name: 'CartProduct',
-        component: () => import('pages/front/CartProduct.vue'),
-        meta: {
-          title: '一個地方 | 購物車',
-          login: true,
-          admin: false
-        }
-      },
-      {
-        path: 'orders',
-        name: 'orders',
-        component: () => import('pages/front/OrdersView.vue'),
-        meta: {
-          title: '一個地方 | 訂餐清單',
-          login: true,
-          admin: false
-        }
-      },
-      {
         path: 'seat',
         name: 'seat',
         component: () => import('pages/front/AllSeat.vue'),
@@ -84,29 +64,19 @@ const routes = [
         }
       },
       {
-        path: 'CartSeat',
-        name: 'CartSeat',
-        component: () => import('pages/front/CartSeat.vue'),
-        meta: {
-          title: '一個地方 | 購物車',
-          login: true,
-          admin: false
-        }
-      },
-      {
-        path: 'bookings',
-        name: 'bookings',
-        component: () => import('pages/front/bookingsView.vue'),
-        meta: {
-          title: '一個地方 | 訂位清單',
-          login: true,
-          admin: false
-        }
-      },
-      {
         path: 'about',
         name: 'about',
-        component: () => import('pages/front/aboutView.vue'),
+        component: () => import('src/pages/front/AboutView.vue'),
+        meta: {
+          title: '一個地方 | 關於我們',
+          login: false,
+          admin: false
+        }
+      },
+      {
+        path: 'contact',
+        name: 'contact',
+        component: () => import('src/pages/front/ContactView.vue'),
         meta: {
           title: '一個地方 | 關於我們',
           login: false,
@@ -152,7 +122,7 @@ const routes = [
       {
         path: 'seats',
         name: 'admin-seats',
-        component: () => import('../pages/admin/seatsView.vue'),
+        component: () => import('../pages/admin/SeatsView.vue'),
         meta: {
           title: '一個地方 | 座位管理',
           login: true,
@@ -162,7 +132,7 @@ const routes = [
       {
         path: 'bookings',
         name: 'admin-bookings',
-        component: () => import('../pages/admin/bookingsView.vue'),
+        component: () => import('../pages/admin/BookingsView.vue'),
         meta: {
           title: '一個地方 | 訂位管理',
           login: true,
@@ -172,11 +142,87 @@ const routes = [
       {
         path: 'members',
         name: 'members',
-        component: () => import('../pages/admin/membersView.vue'),
+        component: () => import('../pages/admin/MembersView.vue'),
         meta: {
           title: '一個地方 | 會員管理',
           login: true,
           admin: true
+        }
+      },
+      {
+        path: 'statistics',
+        name: 'statistics',
+        component: () => import('../pages/admin/StatisticsView.vue'),
+        meta: {
+          title: '一個地方 | 營業統計',
+          login: true,
+          admin: true
+        }
+      }
+    ]
+  },
+  {
+    path: '/member',
+    component: () => import('layouts/MenberLayout.vue'),
+    children: [
+      {
+        path: '',
+        name: 'member-home',
+        component: () => import('pages/member/HomeView.vue'),
+        meta: {
+          title: '一個地方｜會員中心',
+          login: true,
+          admin: false
+        }
+      },
+      {
+        path: 'member',
+        name: 'member',
+        component: () => import('pages/member/MembersView.vue'),
+        meta: {
+          title: '一個地方｜會員資料',
+          login: true,
+          admin: false
+        }
+      },
+      {
+        path: 'CartProduct',
+        name: 'CartProduct',
+        component: () => import('pages/member/CartProduct.vue'),
+        meta: {
+          title: '一個地方 | 訂餐確認',
+          login: true,
+          admin: false
+        }
+      },
+      {
+        path: 'orders',
+        name: 'orders',
+        component: () => import('pages/member/OrdersView.vue'),
+        meta: {
+          title: '一個地方 | 訂餐明細',
+          login: true,
+          admin: false
+        }
+      },
+      {
+        path: 'CartSeat',
+        name: 'CartSeat',
+        component: () => import('pages/member/CartSeat.vue'),
+        meta: {
+          title: '一個地方 | 訂位確認',
+          login: true,
+          admin: false
+        }
+      },
+      {
+        path: 'bookings',
+        name: 'bookings',
+        component: () => import('src/pages/member/BookingsView.vue'),
+        meta: {
+          title: '一個地方 | 訂位明細',
+          login: true,
+          admin: false
         }
       }
     ]

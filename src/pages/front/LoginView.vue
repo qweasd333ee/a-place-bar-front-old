@@ -1,5 +1,5 @@
 <template>
-  <q-page id="LoginView">
+  <q-page id="login-view">
     <div class="bg-left">
       <q-img src="../../assets/CarouselPic/pic1.jpeg"></q-img>
     </div>

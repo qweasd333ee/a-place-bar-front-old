@@ -1,5 +1,5 @@
 <template>
-  <q-layout id="admin-layout" view="hHh Lpr lff">
+  <q-layout id="member-layout" view="hHh Lpr lff">
     <q-header elevated>
       <q-toolbar>
         <q-btn dense flat round icon="menu" @click="drawer = !drawer" />
@@ -20,41 +20,37 @@
     >
       <q-scroll-area class="fit">
         <q-list padding style="height: calc(100% - 150px); margin-top: 150px;">
-          <q-item clickable v-ripple to="/admin/products">
-            <q-item-section avatar>
-              <q-icon name="restaurant" />
-            </q-item-section>
-            <q-item-section>餐點管理</q-item-section>
-          </q-item>
-          <q-item clickable v-ripple to="/admin/orders">
-            <q-item-section avatar>
-              <q-icon name="list_alt" />
-            </q-item-section>
-            <q-item-section>訂餐管理</q-item-section>
-          </q-item>
-          <q-item clickable v-ripple to="/admin/seats">
-            <q-item-section avatar>
-              <q-icon name="chair" />
-            </q-item-section>
-            <q-item-section>座位管理</q-item-section>
-          </q-item>
-          <q-item clickable v-ripple to="/admin/bookings">
-            <q-item-section avatar>
-              <q-icon name="airline_seat_recline_extra" />
-            </q-item-section>
-            <q-item-section>訂位管理</q-item-section>
-          </q-item>
-          <q-item clickable v-ripple to="/admin/members">
+          <q-item clickable v-ripple to="/member/member">
             <q-item-section avatar>
               <q-icon name="account_circle" />
             </q-item-section>
-            <q-item-section>會員管理</q-item-section>
+            <q-item-section>會員資料</q-item-section>
           </q-item>
-          <q-item clickable v-ripple to="/admin/statistics">
+          <q-item clickable v-ripple to="/member/CartProduct">
+            <q-badge color="red" rounded floating :label="CartProduct" />
             <q-item-section avatar>
-              <q-icon name="bar_chart" />
+              <q-icon name="local_bar" />
             </q-item-section>
-            <q-item-section>營業統計</q-item-section>
+            <q-item-section>訂餐確認</q-item-section>
+          </q-item>
+          <q-item clickable v-ripple to="/member/orders">
+            <q-item-section avatar>
+              <q-icon name="list_alt" />
+            </q-item-section>
+            <q-item-section>訂餐明細</q-item-section>
+          </q-item>
+          <q-item clickable v-ripple to="/member/CartSeat">
+            <q-item-section avatar>
+              <q-icon name="chair" />
+            </q-item-section>
+            <q-item-section>訂位確認</q-item-section>
+            <q-badge color="red" floating rounded :label="CartSeat" />
+          </q-item>
+          <q-item clickable v-ripple to="/member/bookings">
+            <q-item-section avatar>
+              <q-icon name="list_alt" />
+            </q-item-section>
+            <q-item-section>訂位明細</q-item-section>
           </q-item>
         </q-list>
         <q-img class="absolute-top" src="https://cdn.quasar.dev/img/material.png" style="height: 150px">
@@ -81,6 +77,6 @@ import { useUserStore } from 'src/stores/user'
 
 const drawer = ref(false)
 const user = useUserStore()
-const { avatar, account } = storeToRefs(user)
+const { avatar, account, CartProduct, CartSeat } = storeToRefs(user)
 
 </script>

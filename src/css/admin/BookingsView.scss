@@ -1,0 +1,25 @@
+#admin-bookings-view {
+  background-color: #20241a;
+  #section01 {
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    .text {
+      margin-bottom: 5rem;
+    }
+    .container {
+      .q-markup-table {
+        background-color: #e1d0b6;
+        thead {
+          th {
+            font-size: 1.2rem;
+          }
+        }
+        tbody {
+          td {
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+  }
+}

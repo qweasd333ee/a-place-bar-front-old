@@ -7,7 +7,13 @@ import { LocalStorage, Notify } from 'quasar'
 export const useUserStore = defineStore('user', () => {
   const token = ref('')
   const account = ref('')
+  const name = ref('')
   const email = ref('')
+  const phone = ref('')
+  const address = ref('')
+  const gender = ref('')
+  const age = ref(0)
+  const creitcard = ref('')
   const CartProduct = ref(0)
   const CartSeat = ref(0)
   const role = ref(0)
@@ -27,7 +33,13 @@ export const useUserStore = defineStore('user', () => {
       const { data } = await api.post('/users/login', form)
       token.value = data.result.token
       account.value = data.result.account
+      name.value = data.result.name
       email.value = data.result.email
+      phone.value = data.result.phone
+      address.value = data.result.address
+      gender.value = data.result.gender
+      age.value = data.result.age
+      creitcard.value = data.result.creitcard
       CartProduct.value = data.result.CartProduct
       CartSeat.value = data.result.CartSeat
       role.value = data.result.role
@@ -51,6 +63,13 @@ export const useUserStore = defineStore('user', () => {
       await apiAuth.delete('/users/logout')
       token.value = ''
       account.value = ''
+      name.value = ''
+      email.value = ''
+      phone.value = ''
+      address.value = ''
+      gender.value = ''
+      age.value = 0
+      creitcard.value = ''
       role.value = 0
       CartProduct.value = 0
       CartSeat.value = 0
@@ -74,7 +93,13 @@ export const useUserStore = defineStore('user', () => {
     try {
       const { data } = await apiAuth.get('/users/me')
       account.value = data.result.account
+      name.value = data.result.name
       email.value = data.result.email
+      phone.value = data.result.phone
+      address.value = data.result.address
+      gender.value = data.result.gender
+      age.value = data.result.age
+      creitcard.value = data.result.creitcard
       CartProduct.value = data.result.CartProduct
       CartSeat.value = data.result.CartSeat
       role.value = data.result.role
@@ -121,7 +146,7 @@ export const useUserStore = defineStore('user', () => {
     }
   }
 
-  async function editCartSeat ({ _id, quantity }) {
+  async function editCartSeat ({ _id, quantity, date, name, phone, email }) {
     if (token.value.length === 0) {
       Swal.fire({
         icon: 'error',
@@ -132,7 +157,8 @@ export const useUserStore = defineStore('user', () => {
       return
     }
     try {
-      const { data } = await apiAuth.post('/users/CartSeat', { s_id: _id, quantity: parseInt(quantity) })
+      console.log(email)
+      const { data } = await apiAuth.post('/users/CartSeat', { s_id: _id, quantity: parseInt(quantity), date, name, phone, email })
       CartSeat.value = data.result
       // Swal.fire({
       //   icon: 'success',
@@ -141,16 +167,17 @@ export const useUserStore = defineStore('user', () => {
       // })
       if (quantity >= 1) {
         Notify.create({
-          message: '已增加人數',
+          message: '已新增訂位人數',
           color: 'green'
         })
       } else if (quantity < 0) {
         Notify.create({
-          message: '已減少人數',
+          message: '已減少訂位人數',
           color: 'red'
         })
       }
     } catch (error) {
+      console.log(error)
       console.log(error?.response)
       Swal.fire({
         icon: 'error',

@@ -1,24 +1,44 @@
-@import './variables';
+// front
+@import './front/HomeView.scss';
+@import './front/LoginView.scss';
+@import './front/AboutView.scss';
+@import './front/AllProduct.scss';
+@import './front/AllSeat.scss';
+@import './front/OneProduct.scss';
+@import './front/OneSeat.scss';
+@import './front/ContactView.scss';
 
-@import './HomeView.scss';
-@import './LoginView.scss';
-@import './AboutView.scss';
-@import './AllProduct.scss';
-@import './AllSeat.scss';
-@import './OneProduct.scss';
-@import './OneSeat.scss';
-@import './CardProduct.scss';
-@import './CardSeat.scss';
-@import './OrdersView.scss';
-@import './BookingsView.scss';
+// member
+@import './member/HomeView.scss';
+@import './member/MembersView.scss';
+@import './member/CardProduct.scss';
+@import './member/CardSeat.scss';
+@import './member/OrdersView.scss';
+@import './member/BookingsView.scss';
 
-@import './FrontLayout.scss';
+// admin
+@import './admin/HomeView.scss';
+@import './admin/BookingsView.scss';
+@import './admin/MembersView.scss';
+@import './admin/OrdersView.scss';
+@import './admin/ProductsView.scss';
+@import './admin/SeatsView.scss';
+@import './admin/StatisticsView.scss';
 
-@import './ProductCard.scss';
+// layout
+@import './layouts/FrontLayout.scss';
+@import './layouts/MemberLayout.scss';
+@import './layouts/AdminLayout.scss';
 
+// components
+@import './components/ProductCard.scss';
+
+// vue3-img-input
 @import "node_modules/vue3-img-input/src/styles/style.scss";
 $v-image-input-width: 200px !default;
 $v-image-input-height: 200px !default;
+
+// @import "vue-easy-pie-chart/dist/vue-easy-pie-chart.css";
 
 * {
   padding: 0;

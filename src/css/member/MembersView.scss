@@ -1,0 +1,21 @@
+#member-members-view {
+  background-color: #20241a;
+  #section01 {
+    padding-top: 2rem;
+    padding-bottom: 5rem;
+    .text {
+      margin-bottom: 5rem;
+    }
+    .form {
+      background-color: #e1d0b6;
+      border-radius: 3px;
+      font-size: 1.2rem;
+      .col-5 {
+        padding-top: 5rem;
+        .q-input {
+          padding: 0;
+        }
+      }
+    }
+  }
+}

@@ -1,11 +1,10 @@
 <template>
-  <q-page id="orders">
-    <header id="header">
-      <div class="text-white text-center text-h3 background">訂餐清單</div>
-    </header>
+  <q-page id="member-orders-view">
     <section id="section01">
       <div class="container">
         <div class="row">
+          <div class=" col-12 text-white text-center text-h3 text">訂餐明細
+          </div>
           <div class="col-12">
             <q-markup-table>
               <thead class="text-center">
@@ -26,6 +25,9 @@
                       {{ product.p_id.name + ' * ' + product.quantity }}
                     </div>
                   </td>
+                </tr>
+                <tr v-if="orders.length === 0">
+                  <td class="text-center text-h6" colspan="4">沒有明細</td>
                 </tr>
               </tbody>
             </q-markup-table>

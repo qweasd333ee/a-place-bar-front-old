@@ -1,19 +1,19 @@
 <template>
-  <q-page id="card-seat">
-    <header id="header">
-      <div class="text-white text-center text-h3 background">訂位確認</div>
-    </header>
+  <q-page id="member-card-seat">
     <section id="section01">
       <div class="container">
         <div class="row">
+          <div class=" col-12 text-white text-center text-h3 text">訂位確認
+          </div>
           <div class="col-12 q-mb-xl">
             <q-markup-table>
               <thead class="text-center">
                 <tr>
                   <th>座位編號</th>
-                  <th>樓層</th>
-                  <th>分類</th>
-                  <th>座位數</th>
+                  <th>訂位日期、時間</th>
+                  <th>姓名</th>
+                  <th>電話</th>
+                  <th>信箱</th>
                   <th>訂位人數</th>
                   <th>操作</th>
                 </tr>
@@ -21,9 +21,10 @@
               <tbody class="text-center">
                 <tr v-for="(seat, idx) in CartSeat" :key="seat._id" :class="{'bg-red': !seat.s_id.book}">
                   <td>{{ seat.s_id.name }}</td>
-                  <td>{{ seat.s_id.floor }}</td>
-                  <td>{{ seat.s_id.category }}</td>
-                  <td>{{ seat.s_id.seatNumber }}</td>
+                  <td>{{ new Date(seat.date).toLocaleString() }}</td>
+                  <td>{{ seat.name }}</td>
+                  <td>{{ seat.phone }}</td>
+                  <td>{{ seat.email }}</td>
                   <td>
                     <q-btn color="primary" label="-" @click="updateCart(idx, -1)" />
                     &nbsp;{{ seat.quantity }}&nbsp;
@@ -34,7 +35,7 @@
                   </td>
                 </tr>
                 <tr v-if="CartSeat.length === 0">
-                  <td class="text-center" colspan="6">沒有訂位</td>
+                  <td class="text-center text-h6" colspan="7">沒有訂位</td>
                 </tr>
               </tbody>
             </q-markup-table>
@@ -62,7 +63,6 @@ const user = useUserStore()
 const { editCartSeat, booking } = user
 
 const CartSeat = reactive([])
-
 const updateCart = async (idx, quantity) => {
   await editCartSeat({ _id: CartSeat[idx].s_id._id, quantity })
   CartSeat[idx].quantity += quantity
@@ -73,7 +73,7 @@ const updateCart = async (idx, quantity) => {
 
 async function onBookingBtnClick () {
   await booking()
-  router.push('/bookings')
+  router.push('/member/bookings')
 }
 
 const totalPerson = computed(() => {

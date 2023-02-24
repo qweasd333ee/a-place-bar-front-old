@@ -1,4 +1,4 @@
-#card-product {
+#contact-view {
   #header {
     .background {
       position: relative;
@@ -18,23 +18,16 @@
     }
   }
   #section01 {
-    background-color: #20241a;
+    background: #20241a;
     padding-top: 5rem;
     padding-bottom: 5rem;
     .container {
-      .q-markup-table {
-        background-color: #e1d0b6;
-        thead {
-          th {
-            font-size: 1.2rem;
-          }
-        }
-        tbody {
-          td {
-            font-size: 1rem;
-          }
-        }
-      }
+      padding: 2rem;
+      background: #f4ebe4;
+      border-radius: 8px;
+    }
+    .q-form {
+      border-radius: 5px;
     }
   }
 }

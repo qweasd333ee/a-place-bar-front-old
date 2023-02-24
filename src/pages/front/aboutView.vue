@@ -71,12 +71,20 @@
       <div class="container">
         <div class="row justify-center">
           <div class="col-12 col-md-8 text-center">
-            <q-icon name="mdi-glass-cocktail" size="50px" color="orange" class="q-mb-xl" />
-            <div>
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam voluptate expedita odit odio laboriosam reiciendis dolor fuga numquam, mollitia in laudantium, ad accusantium sapiente recusandae assumenda dignissimos dicta natus labore.
+            <q-icon
+            class="q-mb-xl"
+            name="mdi-glass-cocktail" size="50px"
+            color="orange" />
+            <div class="text-h6 q-mb-xl">
+              大家知道我們為什麼取名叫一個地方嗎？<br>
+              說起來這其實源自於小琉球人類們的口頭禪<br>
+              當你問起：你要去哪？<br>
+              回答則是：一個地方<br>
+              因為懶得跟你說要去哪裡 所以只好說一個地方<br>
+              當somewhere 變成a.place 就是一個應該要來的地方了<br>
             </div>
-            <div class="q-mt-xl text-grey-7">
-              - kaixuan
+            <div class="text-h6 text-grey-7">
+              - 金罵有閒 趕緊來喝
             </div>
           </div>
         </div>

@@ -16,7 +16,7 @@
                 <h6 class="q-pb-xl">{{ product.description }}</h6>
                 <p class="q-pb-xl">${{ product.price }}</p>
                 <q-form class="justify-end" v-model="valid" @submit="submitCart">
-                  <q-input v-model.number="quantity" label="數量" :rules="[rules.required, rules.number]" />
+                  <q-input class="q-pb-xl" filled v-model.number="quantity" type="number" label="數量" :rules="[rules.required, rules.number]" />
                   <q-btn label="加入購物車" type="submit" color="primary"/>
                 </q-form>
               </q-card-section>

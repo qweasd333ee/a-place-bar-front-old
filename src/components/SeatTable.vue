@@ -1,20 +1,15 @@
 <template>
-  <td>
-    <router-link
-        class="text-primary"
-        style="text-decoration: none;" :to="'/seats/' + _id">{{ name }}
-    </router-link>
-  </td>
+  <td>{{ name }}</td>
   <td>{{ floor }}</td>
   <td>{{ category }}</td>
   <td>{{ seatNumber }}</td>
   <td>
-    <q-btn color="primary" icon="chair" :label="!using ? '加入訂位' : '使用中'" :disabled="using" @click="editCartSeat({_id, quantity: seatNumber})" />
+    <q-btn color="primary" icon="chair" :to="'/seats/' + _id" />
   </td>
 </template>
 
 <script setup>
-import { useUserStore } from 'src/stores/user'
+// import { useUserStore } from 'src/stores/user'
 
 defineProps({
   _id: {
@@ -41,12 +36,16 @@ defineProps({
     type: Boolean,
     default: false
   },
+  date: {
+    type: String,
+    default: '123'
+  },
   category: {
     type: String,
     default: ''
   }
 })
 
-const user = useUserStore()
-const { editCartSeat } = user
+// const user = useUserStore()
+// const { editCartSeat } = user
 </script>

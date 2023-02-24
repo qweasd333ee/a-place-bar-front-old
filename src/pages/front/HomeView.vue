@@ -12,7 +12,7 @@
               <span class="text-orange">BAR</span>
               /RESTAURANT
             </p>
-            <q-img class="q-mb-xl" src="@/assets/LogoPic/logo3.png" width="500px" />
+            <q-img class="q-mb-xl" src="@/assets/LogoPic/logo7.png" width="250px" />
             <p class="text q-mb-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, facilis ullam. A deleniti blanditiis soluta repudiandae iusto voluptas ipsum quia, debitis suscipit, eligendi voluptatibus.</p>
           </div>
         </div>

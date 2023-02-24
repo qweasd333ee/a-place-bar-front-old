@@ -1,11 +1,10 @@
 <template>
-  <q-page id="card-product">
-    <header id="header">
-      <div class="text-white text-center text-h3 background">訂餐確認</div>
-    </header>
+  <q-page id="member-card-product">
     <section id="section01">
       <div class="container">
         <div class="row">
+          <div class=" col-12 text-white text-center text-h3 text">訂餐確認
+          </div>
           <div class="col-12 q-mb-xl">
             <q-markup-table>
               <thead class="text-center">
@@ -36,7 +35,7 @@
                   </td>
                 </tr>
                 <tr v-if="CartProduct.length === 0">
-                  <td class="text-center" colspan="6">沒有商品</td>
+                  <td class="text-center text-h6" colspan="6">沒有訂餐</td>
                 </tr>
               </tbody>
             </q-markup-table>
@@ -75,7 +74,7 @@ const updateCart = async (idx, quantity) => {
 
 const onCheckoutBtnClick = async () => {
   await checkout()
-  router.push('/orders')
+  router.push('/member/orders')
 }
 
 const totalPrice = computed(() => {

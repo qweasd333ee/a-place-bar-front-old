@@ -1,68 +1,70 @@
 <template>
-  <q-page class="q-pa-md">
-    <div class="row">
-      <h4 class="col-12 text-center">
-        餐點管理
-      </h4>
-      <div class="col-12 text-right">
-        <q-btn color="primary" label="新增餐點" @click="openDialog(-1)" class="q-mb-md"/>
-        <q-dialog v-model="form.dialog" persistent>
-          <q-card style="width: 700px; max-width: 80vw;">
-            <q-toolbar class="bg-primary text-white">
-              <q-toolbar-title>
-                <div class="text-center">{{ form._id.length > 0 ? '編輯餐點' : '新增餐點' }}</div>
-              </q-toolbar-title>
-            </q-toolbar>
-            <q-form v-model="form.valid" @submit="submit">
-              <q-card class="q-pa-md">
-                <q-card-section class="q-pt-none">
-                  <q-input filled v-model="form.name" autofocus label="名稱" :rules="[rules.required]" />
-                  <q-input filled v-model="form.price" autofocus label="價格" :rules="[rules.required, rules.price]" />
-                  <q-select style="margin-bottom: 1.2rem;" filled v-model="form.category" :options="category" label="分類" />
-                  <q-input filled v-model="form.description" autofocus type="textarea" rows="3" label="說明" :rules="[rules.required]" />
-                  <q-checkbox style="margin-bottom: 1.2rem;" v-model="form.sell" label="上架" />
-                  <v-image-input v-model="form.image" removable :max-file-size="1" />
-                </q-card-section>
-                <q-card-actions align="center">
-                  <q-btn type="submit" label="確定" color="positive" />
-                  <q-btn @click="form.dialog = false" label="取消" color="negative"/>
-                </q-card-actions>
+  <q-page id="admin-products-view">
+    <section id="section01">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 text-center text-white text-h3 text">餐點管理</div>
+          <div class="col-12 text-right">
+            <q-btn color="primary" label="新增餐點" @click="openDialog(-1)" class="q-mb-md"/>
+            <q-dialog v-model="form.dialog" persistent>
+              <q-card style="width: 700px; max-width: 80vw;">
+                <q-toolbar class="bg-primary text-white">
+                  <q-toolbar-title>
+                    <div class="text-center">{{ form._id.length > 0 ? '編輯餐點' : '新增餐點' }}</div>
+                  </q-toolbar-title>
+                </q-toolbar>
+                <q-form v-model="form.valid" @submit="submit">
+                  <q-card class="q-pa-md">
+                    <q-card-section class="q-pt-none">
+                      <q-input filled v-model="form.name" autofocus label="名稱" :rules="[rules.required]" />
+                      <q-input filled v-model="form.price" autofocus label="價格" :rules="[rules.required, rules.price]" />
+                      <q-select style="margin-bottom: 1.2rem;" filled v-model="form.category" :options="category" label="分類" />
+                      <q-input filled v-model="form.description" autofocus type="textarea" rows="3" label="說明" :rules="[rules.required]" />
+                      <q-checkbox style="margin-bottom: 1.2rem;" v-model="form.sell" label="上架" />
+                      <v-image-input v-model="form.image" removable :max-file-size="1" />
+                    </q-card-section>
+                    <q-card-actions align="center">
+                      <q-btn type="submit" label="確定" color="positive" />
+                      <q-btn @click="form.dialog = false" label="取消" color="negative"/>
+                    </q-card-actions>
+                  </q-card>
+                </q-form>
               </q-card>
-            </q-form>
-          </q-card>
-        </q-dialog>
+            </q-dialog>
+          </div>
+          <div class="col-12">
+            <q-markup-table>
+              <thead class="text-center">
+                <tr>
+                  <th>照片</th>
+                  <th>名稱</th>
+                  <th>價格</th>
+                  <th>分類</th>
+                  <th>上架</th>
+                  <th>編輯</th>
+                </tr>
+              </thead>
+              <tbody class="text-center">
+                <tr v-for="(product, idx) in products" :key="product._id">
+                  <td>
+                    <q-img :src="product.image" :ratio="1" width="150px"/>
+                  </td>
+                  <td>{{ product.name }}</td>
+                  <td>{{ product.price }}</td>
+                  <td>{{ product.category }}</td>
+                  <td>
+                    <q-toggle v-model="product.sell" color="green"/>
+                  </td>
+                  <td>
+                    <q-btn color="primary" icon="edit" @click="openDialog(idx)" />
+                  </td>
+                </tr>
+              </tbody>
+            </q-markup-table>
+          </div>
+        </div>
       </div>
-      <div class="col-12">
-        <q-markup-table>
-          <thead class="text-center">
-            <tr>
-              <th>照片</th>
-              <th>名稱</th>
-              <th>價格</th>
-              <th>分類</th>
-              <th>上架</th>
-              <th>編輯</th>
-            </tr>
-          </thead>
-          <tbody class="text-center">
-            <tr v-for="(product, idx) in products" :key="product._id">
-              <td>
-                <q-img :src="product.image" :ratio="1" width="150px"/>
-              </td>
-              <td>{{ product.name }}</td>
-              <td>{{ product.price }}</td>
-              <td>{{ product.category }}</td>
-              <td>
-                <q-toggle v-model="product.sell" color="green"/>
-              </td>
-              <td>
-                <q-btn color="primary" icon="edit" @click="openDialog(idx)" />
-              </td>
-            </tr>
-          </tbody>
-        </q-markup-table>
-      </div>
-    </div>
+    </section>
   </q-page>
 </template>
 
