@@ -6,7 +6,7 @@
     <div class="col-8 q-px-md">
       <q-item-label class="text-h5 q-mb-md">
         <router-link
-        class="text-primary"
+        class="text-warning"
         style="text-decoration: none;" :to="'/products/' + _id">{{ name }}
         </router-link>
       </q-item-label>
@@ -19,7 +19,7 @@
         ${{ price }}
       </q-item-label>
         <q-item-label>
-          <q-btn color="primary" icon="shopping_cart" @click="editCartProduct({_id, quantity: 1})" />
+          <q-btn color="warning" icon="shopping_cart" @click="editCartProduct({_id, quantity: 1})" />
         </q-item-label>
     </div>
   </q-card>

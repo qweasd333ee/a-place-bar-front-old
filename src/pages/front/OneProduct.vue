@@ -13,11 +13,11 @@
             <q-card id="card">
               <q-card-section class="column text-center">
                 <h3 class="q-pb-xl">{{ product.name }}</h3>
-                <h6 class="q-pb-xl">{{ product.description }}</h6>
-                <p class="q-pb-xl">${{ product.price }}</p>
+                <h6 class="q-pb-xl text-h4">{{ product.description }}</h6>
+                <p class="q-pb-xl text-body1">${{ product.price }}</p>
                 <q-form class="justify-end" v-model="valid" @submit="submitCart">
                   <q-input class="q-pb-xl" filled v-model.number="quantity" type="number" label="數量" :rules="[rules.required, rules.number]" />
-                  <q-btn label="加入購物車" type="submit" color="primary"/>
+                  <q-btn label="加入購物車" type="submit" color="warning"/>
                 </q-form>
               </q-card-section>
             </q-card>

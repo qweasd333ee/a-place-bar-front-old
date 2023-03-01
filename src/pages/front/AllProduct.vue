@@ -7,13 +7,13 @@
       <div class="container">
         <div class="row justify-center text-white">
           <div class="col-12 col-md-8 col-lg-6 text-center">
-            <h4 class="q-mb-md">餐點分類</h4>
-            <p class="q-mb-xl">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat soluta dignissimos autem sit ullam cumque, possimus ducimus rerum dolorem veniam labore sapiente animi voluptas, dolor eligendi quae inventore. Corrupti, accusamus?</p>
+            <div class="q-mb-md text-h4">餐點分類</div>
+            <p class="q-mb-xl text-h6">我們的酒吧提供炸物和各式調酒，包括shot、茶酒、特調、奶酒、無酒精等，供您根據自己的口味和需求進行選擇。無論您喜歡清淡的口感還是濃烈的味道，我們都有合適的飲品供您品嚐。期待您的光臨，一同享受美食和美酒！</p>
           </div>
         </div>
         <div class="row">
           <q-card flat class="col-12">
-            <q-tabs v-model="tab" dense active-color="primary" indicator-color="primary" narrow-indicator align="center">
+            <q-tabs v-model="tab" dense active-color="warning" indicator-color="warning" narrow-indicator align="center">
               <q-tab name="shot" label="shot" />
               <q-tab name="茶酒" label="茶酒" />
               <q-tab name="特調" label="特調" />

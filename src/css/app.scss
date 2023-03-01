@@ -33,6 +33,9 @@
 // components
 @import './components/ProductCard.scss';
 
+@import './animation.scss';
+
+
 // vue3-img-input
 @import "node_modules/vue3-img-input/src/styles/style.scss";
 $v-image-input-width: 200px !default;

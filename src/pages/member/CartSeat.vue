@@ -26,12 +26,12 @@
                   <td>{{ seat.phone }}</td>
                   <td>{{ seat.email }}</td>
                   <td>
-                    <q-btn color="primary" label="-" @click="updateCart(idx, -1)" />
+                    <q-btn color="warning" label="-" @click="updateCart(idx, -1)" />
                     &nbsp;{{ seat.quantity }}&nbsp;
-                    <q-btn color="primary" label="+" @click="updateCart(idx, 1)"/>
+                    <q-btn color="warning" label="+" @click="updateCart(idx, 1)"/>
                   </td>
                   <td>
-                    <q-btn color="primary" @click="updateCart(idx, seat.quantity * -1)" label="刪除" />
+                    <q-btn color="red" @click="updateCart(idx, seat.quantity * -1)" label="刪除" />
                   </td>
                 </tr>
                 <tr v-if="CartSeat.length === 0">
@@ -42,7 +42,7 @@
           </div>
           <div class="col-12 text-center">
             <h5 class="q-mb-lg text-white">總人數 {{ totalPerson }}</h5>
-            <q-btn class="q-mb-lg" color="primary" label="訂位" :disabled="!canBooking" @click="onBookingBtnClick" />
+            <q-btn class="q-mb-lg" color="warning" label="訂位" :disabled="!canBooking" @click="onBookingBtnClick" />
           </div>
         </div>
       </div>

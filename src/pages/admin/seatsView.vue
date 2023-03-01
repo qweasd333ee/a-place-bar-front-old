@@ -5,7 +5,7 @@
         <div class="row">
           <div class="col-12 text-center text-white text-h3 text">座位管理</div>
           <div class="col-12 text-right">
-            <q-btn color="primary" label="新增座位" @click="openDialog(-1)" class="q-mb-md"/>
+            <q-btn color="warning" label="新增座位" @click="openDialog(-1)" class="q-mb-md"/>
             <q-dialog v-model="form.dialog" persistent>
               <q-card style="width: 700px; max-width: 80vw;">
                 <q-toolbar class="bg-primary text-white">
@@ -58,7 +58,7 @@
                     <q-toggle v-model="seat.using" color="green"/>
                   </td>
                   <td>
-                    <q-btn color="primary" icon="edit" @click="openDialog(idx)" />
+                    <q-btn color="warning" icon="edit" @click="openDialog(idx)" />
                   </td>
                 </tr>
               </tbody>

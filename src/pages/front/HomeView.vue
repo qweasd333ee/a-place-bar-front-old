@@ -8,29 +8,27 @@
       <div class="container q-mt-xl">
         <div class="row justify-center">
           <div class="content col-12 text-center q-my-auto">
-            <p class="q-mb-lg">
-              <span class="text-orange">BAR</span>
-              /RESTAURANT
-            </p>
             <q-img class="q-mb-xl" src="@/assets/LogoPic/logo7.png" width="250px" />
-            <p class="text q-mb-xl">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, facilis ullam. A deleniti blanditiis soluta repudiandae iusto voluptas ipsum quia, debitis suscipit, eligendi voluptatibus.</p>
+            <p class="text q-mb-xl text-h6">
+              夜晚 &nbsp; 找個室內舒適的環境跟朋友一起來喝點小酒暢聊一整晚吧！<br>舒服的沙發 &nbsp; 優美的燈光 &nbsp; 好喝的酒 &nbsp; 再舒適不過的環境 &nbsp; 等著你來享受
+            </p>
           </div>
         </div>
       </div>
       <div class="container">
         <div class="row justify-around">
           <div class="col text-left">
-            <a href="/">
+            <a href="/" target="_blank">
               <q-icon class="q-mr-lg" name="mdi-twitter" />
             </a>
-            <a href="https://www.facebook.com/a.place.2020/">
+            <a href="https://www.facebook.com/a.place.2020/" target="_blank">
               <q-icon class="q-mr-lg" name="mdi-facebook" />
             </a>
-            <a href="https://www.instagram.com/a.place_bar/">
+            <a href="https://www.instagram.com/a.place_bar/" target="_blank">
               <q-icon class="q-mr-lg" name="mdi-instagram" />
             </a>
           </div>
-          <div class="col text-right">
+          <div class="col text-right text-body1">
             <p>
               <q-icon left color="orange" class="q-mr-md" name="mdi-map-marker" />
               951台東縣綠島鄉52之1號
@@ -46,7 +44,7 @@
             酒逢知己飲，詩向會人吟
           </q-card-section>
           <q-card-section class="text-h6">
-            素未謀面的我們，此時此刻都在這段時間內一起享受綠島獨特的情調，在「一個地方」把酒言歡，感受著生活的美好，工作的充實，以及回歸自然的本質。
+            素未謀面的我們，此時此刻都在這段時間內一起享受綠島獨特的情調， <br> 在「一個地方」把酒言歡，感受著生活的美好，工作的充實，以及回歸自然的本質。
           </q-card-section>
         </q-card>
       </div>
@@ -74,7 +72,7 @@
             <div class="text-h4">營業時間</div>
           </q-card-section>
           <q-card-section class="text-h6">
-            每日19:30~01:00
+            週一至週日，晚上19:30至01:00
           </q-card-section>
           <q-card-section>
             <q-btn outline label="查看更多資訊" to="/about" />
@@ -86,7 +84,7 @@
       <div class="col-12 col-sm-7">
         <q-card class="column flex-center text-center" square flat style="height: 100%;">
           <q-card-section class="text-h6">
-            一杯酒的用心 除了調製過程外 還有恰到好處的裝飾 讓喝酒時視覺味覺嗅覺堆疊出多重層次的饗宴 我們調的不是酒 是愛
+            一杯酒的用心 除了調製過程外 還有恰到好處的裝飾 <br> 讓喝酒時視覺味覺嗅覺堆疊出多重層次的饗宴 我們調的不是酒 是愛
           </q-card-section>
           <q-card-section>
             <q-btn outline label="餐點介紹" to="/product" />
@@ -100,8 +98,8 @@
     <section id="section05">
       <div class="container">
         <div class="row">
-          <h4 class="col-12 text-center q-mb-lg">關於</h4>
-          <p class="col-12 text-center q-mb-xl">
+          <div class="col-12 text-center q-mb-lg text-h4">關於</div>
+          <p class="col-12 text-center q-mb-xl text-h6 text">
             一個人可以走得很快 但一群人可以走得很遠
             <br>
             願那些相聚與重逢，能留在你們心裡的一個地方

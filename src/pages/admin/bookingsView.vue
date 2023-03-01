@@ -9,7 +9,6 @@
               <thead class="text-center">
                 <tr>
                   <th>ID</th>
-                  <th>使用者</th>
                   <th>姓名</th>
                   <th>日期、時間</th>
                   <th>電話</th>
@@ -21,7 +20,6 @@
               <tbody class="text-center">
                 <tr v-for="booking in bookings" :key="booking._id">
                   <td>{{ booking._id }}</td>
-                  <td>{{ booking.u_id.account }}</td>
                   <td>{{ booking.seats[0].name }}</td>
                   <td>{{ new Date(booking.seats[0].date).toLocaleString() }}</td>
                   <td>{{ booking.seats[0].phone }}</td>

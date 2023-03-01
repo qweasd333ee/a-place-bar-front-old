@@ -7,20 +7,21 @@
       <div class="container">
         <div class="row justify-center">
           <div class="col-12 col-md-8 col-lg-6 text-center">
-            <div class="text-h4 q-mb-lg">Lorem ipsum dolor sit amet.</div>
-            <p class=" q-mb-xl">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Animi, assumenda quae in earum vero voluptatem nihil, voluptates libero repellat atque corrupti corporis tempore reiciendis ea dignissimos culpa maxime ut. Nostrum?</p>
+            <div class="text-h4 q-mb-lg">聯絡資訊</div>
+            <p class="text-h6 q-mb-xl">如果您有任何意見或建議，歡迎您隨時與我們聯繫，我們會認真聆聽您的想法，為您提供更好的服務。謝謝您的支持，我們期待著您的光臨！</p>
           </div>
         </div>
         <div class="row">
-          <div class="col-md-3 order-last q-px-lg">
-            <div class="q-mb-lg text-h6">write us</div>
-            <div class="q-mb-lg text-body1">admin@admin.com</div>
-            <div class="q-mb-lg text-h6">call us</div>
-            <div class="q-mb-lg text-body1">0965-603-279</div>
-            <div class="q-mb-lg text-h6">visit us</div>
-            <div class="q-mb-lg text-body1">951台東縣綠島鄉52之1號</div>
-            <div class="q-mb-lg text-h6">social links</div>
-            <div class="q-mb-lg">
+          <div class="col-md-3 order-last q-px-lg info">
+            <div class="q-mb-sm text-h6">聯絡信箱</div>
+            <div class="q-mb-xl text-body1">a.place.greenisland@gmail.com</div>
+            <div class="q-mb-sm text-h6">聯絡電話</div>
+            <div class="q-mb-xl text-body1">0965-603-279</div>
+            <div class="q-mb-sm text-h6">聯絡地址</div>
+            <div class="q-mb-xl text-body1">951台東縣綠島鄉52之1號</div>
+            <div class="q-mb-sm text-h6">營業時間</div>
+            <div class="q-mb-xl text-body1">週一至週日，晚上19:30至01:00</div>
+            <!-- <div class="q-mb-lg">
             <a href="/">
               <q-icon class="q-mr-lg" name="mdi-twitter" />
             </a>
@@ -30,7 +31,7 @@
             <a href="https://www.instagram.com/a.place_bar/">
               <q-icon class="q-mr-lg" name="mdi-instagram" />
             </a>
-          </div>
+          </div> -->
           </div>
           <div class="col-md-9 q-px-lg">
             <q-form
@@ -45,11 +46,11 @@
                 <q-input v-model="text" filled type="text" label="信箱" />
               </div>
               <div class="q-mb-lg">
-                <q-input v-model="text" filled rows="10" type="textarea" label="信息" />
+                <q-input v-model="text" filled rows="11" type="textarea" label="信息" />
               </div>
               <div>
-                <q-btn label="Submit" type="submit" color="primary"/>
-                <q-btn label="Reset" type="reset" color="primary" flat class="q-ml-sm" />
+                <q-btn label="送出" type="submit" color="warning"/>
+                <q-btn label="重設" type="reset" color="warning" flat class="q-ml-sm" />
               </div>
             </q-form>
           </div>

@@ -57,7 +57,7 @@
                       </q-icon>
                     </template>
                   </q-input>
-                  <q-btn :label="!seat.using ? '加入訂位' : '使用中'" type="submit" color="primary" :disabled="seat.using"/>
+                  <q-btn :label="!seat.using ? '加入訂位' : '使用中'" type="submit" color="warning" :disabled="seat.using"/>
                 </q-form>
               </q-card-section>
             </q-card>

@@ -5,10 +5,10 @@
         <div class="row">
           <div class="col-12 text-center text-white text-h3 text">餐點管理</div>
           <div class="col-12 text-right">
-            <q-btn color="primary" label="新增餐點" @click="openDialog(-1)" class="q-mb-md"/>
+            <q-btn color="warning" label="新增餐點" @click="openDialog(-1)" class="q-mb-md"/>
             <q-dialog v-model="form.dialog" persistent>
               <q-card style="width: 700px; max-width: 80vw;">
-                <q-toolbar class="bg-primary text-white">
+                <q-toolbar class="bg-warning text-white">
                   <q-toolbar-title>
                     <div class="text-center">{{ form._id.length > 0 ? '編輯餐點' : '新增餐點' }}</div>
                   </q-toolbar-title>
@@ -21,7 +21,7 @@
                       <q-select style="margin-bottom: 1.2rem;" filled v-model="form.category" :options="category" label="分類" />
                       <q-input filled v-model="form.description" autofocus type="textarea" rows="3" label="說明" :rules="[rules.required]" />
                       <q-checkbox style="margin-bottom: 1.2rem;" v-model="form.sell" label="上架" />
-                      <v-image-input v-model="form.image" removable :max-file-size="1" />
+                      <v-image-input style="width: 200px;" v-model="form.image" removable :max-file-size="1" />
                     </q-card-section>
                     <q-card-actions align="center">
                       <q-btn type="submit" label="確定" color="positive" />
@@ -56,7 +56,7 @@
                     <q-toggle v-model="product.sell" color="green"/>
                   </td>
                   <td>
-                    <q-btn color="primary" icon="edit" @click="openDialog(idx)" />
+                    <q-btn color="warning" icon="edit" @click="openDialog(idx)" />
                   </td>
                 </tr>
               </tbody>

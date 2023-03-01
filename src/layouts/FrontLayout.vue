@@ -95,13 +95,13 @@
           </div>
 
           <div class="col-12 footerIcons">
-            <a href="https://www.instagram.com/a.place_bar/">
+            <a href="https://www.instagram.com/a.place_bar/" target="_blank">
               <q-icon name="mdi-instagram" />
             </a>
-            <a href="https://www.facebook.com/a.place.2020/">
+            <a href="https://www.facebook.com/a.place.2020/" target="_blank">
               <q-icon name="mdi-facebook" />
             </a>
-            <a href="/">
+            <a href="/" target="_blank">
               <q-icon name="mdi-twitter" />
             </a>
           </div>
@@ -130,13 +130,13 @@
             <q-img src="@/assets/LogoPic/logo2.jpg" style="height: 50px; width: 50px;" />
         </div>
         <div class="col-12 footerIcons">
-            <a href="https://www.instagram.com/a.place_bar/">
+            <a href="https://www.instagram.com/a.place_bar/" target="_blank">
               <q-icon name="mdi-instagram" />
             </a>
-            <a href="https://www.facebook.com/a.place.2020/">
+            <a href="https://www.facebook.com/a.place.2020/" target="_blank">
               <q-icon name="mdi-facebook" />
             </a>
-            <a href="/">
+            <a href="/" target="_blank">
               <q-icon name="mdi-twitter" />
             </a>
         </div>

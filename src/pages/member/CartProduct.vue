@@ -25,13 +25,13 @@
                   <td>{{ product.p_id.name }}</td>
                   <td>{{ product.p_id.price }}</td>
                   <td>
-                    <q-btn color="primary" label="-" @click="updateCart(idx, -1)" />
+                    <q-btn color="warning" label="-" @click="updateCart(idx, -1)" />
                     &nbsp;{{ product.quantity }}&nbsp;
-                    <q-btn color="primary" label="+" @click="updateCart(idx, 1)"/>
+                    <q-btn color="warning" label="+" @click="updateCart(idx, 1)"/>
                   </td>
                   <td>{{ product.quantity * product.p_id.price }}</td>
                   <td>
-                    <q-btn color="primary" @click="updateCart(idx, product.quantity * -1)" label="刪除" />
+                    <q-btn color="red" @click="updateCart(idx, product.quantity * -1)" label="刪除" />
                   </td>
                 </tr>
                 <tr v-if="CartProduct.length === 0">
@@ -42,7 +42,7 @@
           </div>
           <div class="col-12 text-center">
             <h5 class="q-mb-lg text-white">總金額 {{ totalPrice }}</h5>
-            <q-btn class="q-mb-lg" color="primary" label="結帳" :disabled="!canCheckout" @click="onCheckoutBtnClick" />
+            <q-btn class="q-mb-lg" color="warning" label="結帳" :disabled="!canCheckout" @click="onCheckoutBtnClick" />
           </div>
         </div>
       </div>

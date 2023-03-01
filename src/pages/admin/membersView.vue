@@ -28,7 +28,7 @@
                   <td>{{ user.gender }}</td>
                   <td>{{ user.age }}</td>
                   <td>
-                    <q-btn color="primary" icon="mdi-trash-can" @click="deleteUser(user._id)" />
+                    <q-btn color="red" icon="mdi-trash-can" @click="deleteUser(user._id)" />
                   </td>
                 </tr>
               </tbody>

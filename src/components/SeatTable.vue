@@ -4,7 +4,7 @@
   <td>{{ category }}</td>
   <td>{{ seatNumber }}</td>
   <td>
-    <q-btn color="primary" icon="chair" :to="'/seats/' + _id" />
+    <q-btn color="warning" icon="chair" :to="'/seats/' + _id" />
   </td>
 </template>
 

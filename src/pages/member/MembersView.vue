@@ -104,8 +104,8 @@
                     </div>
                   </div>
                   <div class="q-mb-lg text-center col-12 q-mt-xl">
-                    <q-btn v-if="!edit" label="編輯" icon="mdi-pen" color="primary" outline @click="edit = !edit" />
-                    <q-btn v-if="edit" label="儲存" icon="check" color="green" outline @click="editCheck = !editCheck" />
+                    <q-btn v-if="!edit" label="編輯" icon="mdi-pen" color="warning" @click="edit = !edit" />
+                    <q-btn v-if="edit" label="儲存" icon="check" color="green" @click="editCheck = !editCheck" />
                   </div>
                 </div>
               </div>
