@@ -87,12 +87,12 @@ const routes = [
   },
   {
     path: '/admin',
-    component: () => import('../layouts/AdminLayout.vue'),
+    component: () => import('layouts/AdminLayout.vue'),
     children: [
       {
         path: '',
         name: 'admin-home',
-        component: () => import('../pages/admin/HomeView.vue'),
+        component: () => import('pages/admin/HomeView.vue'),
         meta: {
           title: '一個地方 | 管理',
           login: true,
@@ -102,7 +102,7 @@ const routes = [
       {
         path: 'products',
         name: 'admin-products',
-        component: () => import('../pages/admin/ProductsView.vue'),
+        component: () => import('pages/admin/ProductsView.vue'),
         meta: {
           title: '一個地方 | 餐點管理',
           login: true,
@@ -112,7 +112,7 @@ const routes = [
       {
         path: 'orders',
         name: 'admin-orders',
-        component: () => import('../pages/admin/OrdersView.vue'),
+        component: () => import('pages/admin/OrdersView.vue'),
         meta: {
           title: '一個地方 | 訂單管理',
           login: true,
@@ -122,7 +122,7 @@ const routes = [
       {
         path: 'seats',
         name: 'admin-seats',
-        component: () => import('../pages/admin/SeatsView.vue'),
+        component: () => import('pages/admin/SeatsView.vue'),
         meta: {
           title: '一個地方 | 座位管理',
           login: true,
@@ -132,7 +132,7 @@ const routes = [
       {
         path: 'bookings',
         name: 'admin-bookings',
-        component: () => import('../pages/admin/BookingsView.vue'),
+        component: () => import('pages/admin/BookingsView.vue'),
         meta: {
           title: '一個地方 | 訂位管理',
           login: true,
@@ -142,7 +142,7 @@ const routes = [
       {
         path: 'members',
         name: 'members',
-        component: () => import('../pages/admin/MembersView.vue'),
+        component: () => import('pages/admin/MembersView.vue'),
         meta: {
           title: '一個地方 | 會員管理',
           login: true,
@@ -152,7 +152,7 @@ const routes = [
       {
         path: 'statistics',
         name: 'statistics',
-        component: () => import('../pages/admin/StatisticsView.vue'),
+        component: () => import('pages/admin/StatisticsView.vue'),
         meta: {
           title: '一個地方 | 營業統計',
           login: true,
@@ -218,7 +218,7 @@ const routes = [
       {
         path: 'bookings',
         name: 'bookings',
-        component: () => import('src/pages/member/BookingsView.vue'),
+        component: () => import('pages/member/BookingsView.vue'),
         meta: {
           title: '一個地方 | 訂位明細',
           login: true,
