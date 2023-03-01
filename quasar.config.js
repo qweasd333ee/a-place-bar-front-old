@@ -70,7 +70,7 @@ module.exports = configure(function (/* ctx */) {
       // vueOptionsAPI: false,
 
       // rebuildCache: true, // rebuilds Vite/linter/etc cache on startup
-
+      // 部署：要跟 github 專案名稱相同
       publicPath: '/a-place-bar-front',
       // analyze: true,
       env: {

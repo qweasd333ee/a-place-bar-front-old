@@ -1,39 +1,39 @@
 // front
-@import './front/HomeView.scss';
-@import './front/LoginView.scss';
-@import './front/AboutView.scss';
-@import './front/AllProduct.scss';
-@import './front/AllSeat.scss';
-@import './front/OneProduct.scss';
-@import './front/OneSeat.scss';
-@import './front/ContactView.scss';
+@import 'front/HomeView.scss';
+@import 'front/LoginView.scss';
+@import 'front/AboutView.scss';
+@import 'front/AllProduct.scss';
+@import 'front/AllSeat.scss';
+@import 'front/OneProduct.scss';
+@import 'front/OneSeat.scss';
+@import 'front/ContactView.scss';
 
 // member
-@import './member/HomeView.scss';
-@import './member/MembersView.scss';
-@import './member/CardProduct.scss';
-@import './member/CardSeat.scss';
-@import './member/OrdersView.scss';
-@import './member/BookingsView.scss';
+@import 'member/HomeView.scss';
+@import 'member/MembersView.scss';
+@import 'member/CardProduct.scss';
+@import 'member/CardSeat.scss';
+@import 'member/OrdersView.scss';
+@import 'member/BookingsView.scss';
 
 // admin
-@import './admin/HomeView.scss';
-@import './admin/BookingsView.scss';
-@import './admin/MembersView.scss';
-@import './admin/OrdersView.scss';
-@import './admin/ProductsView.scss';
-@import './admin/SeatsView.scss';
-@import './admin/StatisticsView.scss';
+@import 'admin/HomeView.scss';
+@import 'admin/BookingsView.scss';
+@import 'admin/MembersView.scss';
+@import 'admin/OrdersView.scss';
+@import 'admin/ProductsView.scss';
+@import 'admin/SeatsView.scss';
+@import 'admin/StatisticsView.scss';
 
 // layout
-@import './layouts/FrontLayout.scss';
-@import './layouts/MemberLayout.scss';
-@import './layouts/AdminLayout.scss';
+@import 'layouts/FrontLayout.scss';
+@import 'layouts/MemberLayout.scss';
+@import 'layouts/AdminLayout.scss';
 
 // components
-@import './components/ProductCard.scss';
+@import 'components/ProductCard.scss';
 
-@import './animation.scss';
+@import 'animation.scss';
 
 
 // vue3-img-input
