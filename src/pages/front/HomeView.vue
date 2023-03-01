@@ -2,13 +2,13 @@
   <q-page id="home-view">
     <header id="section01" class="row items-end">
       <video autoplay muted loop class="bg-video">
-        <source src="@/assets/CarouselPic/video.mp4" type="video/mp4">
+        <source src="~/assets/CarouselPic/video.mp4" type="video/mp4">
       </video>
       <div class="mask"></div>
       <div class="container q-mt-xl">
         <div class="row justify-center">
           <div class="content col-12 text-center q-my-auto">
-            <q-img class="q-mb-xl" src="@/assets/LogoPic/logo7.png" width="250px" />
+            <q-img class="q-mb-xl" src="~/assets/LogoPic/logo7.png" width="250px" />
             <p class="text q-mb-xl text-h6">
               夜晚 &nbsp; 找個室內舒適的環境跟朋友一起來喝點小酒暢聊一整晚吧！<br>舒服的沙發 &nbsp; 優美的燈光 &nbsp; 好喝的酒 &nbsp; 再舒適不過的環境 &nbsp; 等著你來享受
             </p>
@@ -51,7 +51,7 @@
     </section>
     <section id="section03" class="row">
       <div class="col-12 col-sm-5">
-        <q-img class="cover" src="@/assets/CarouselPic/pic10.jpeg" />
+        <q-img class="cover" src="~/assets/CarouselPic/pic10.jpeg" />
       </div>
       <div class="col-12 col-sm-7">
         <q-card square flat class="column flex-center">
@@ -92,7 +92,7 @@
         </q-card>
       </div>
       <div class="col-12 col-sm-5 pic">
-        <q-img class="cover" src="@/assets/BartendingPic/酒13.jpeg" />
+        <q-img class="cover" src="~/assets/BartendingPic/酒13.jpeg" />
       </div>
     </section>
     <section id="section05">
@@ -106,17 +106,17 @@
           </p>
         </div>
         <div class="column">
-          <img class="cell" src="@/assets/CarouselPic/pic24.jpeg">
-          <img class="cell" src="@/assets/CarouselPic/pic16.jpeg">
-          <img class="cell" src="@/assets/CarouselPic/pic34.jpeg">
+          <img class="cell" src="~/assets/CarouselPic/pic24.jpeg">
+          <img class="cell" src="~/assets/CarouselPic/pic16.jpeg">
+          <img class="cell" src="~/assets/CarouselPic/pic34.jpeg">
           <div class="flex-break"></div>
-          <img class="cell" src="@/assets/CarouselPic/pic30.jpeg">
-          <img class="cell" src="@/assets/CarouselPic/pic18.jpeg">
-          <img class="cell" src="@/assets/CarouselPic/pic31.jpeg">
+          <img class="cell" src="~/assets/CarouselPic/pic30.jpeg">
+          <img class="cell" src="~/assets/CarouselPic/pic18.jpeg">
+          <img class="cell" src="~/assets/CarouselPic/pic31.jpeg">
           <div class="flex-break"></div>
-          <img class="cell" src="@/assets/CarouselPic/pic17.jpeg">
-          <img class="cell" src="@/assets/CarouselPic/pic27.jpeg">
-          <img class="cell" src="@/assets/CarouselPic/pic28.jpeg">
+          <img class="cell" src="~/assets/CarouselPic/pic17.jpeg">
+          <img class="cell" src="~/assets/CarouselPic/pic27.jpeg">
+          <img class="cell" src="~/assets/CarouselPic/pic28.jpeg">
         </div>
       </div>
     </section>

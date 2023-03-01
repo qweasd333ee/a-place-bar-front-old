@@ -13,7 +13,7 @@
             <p>入口處招牌</p>
           </div>
           <div class="col-4 q-px-md text-2">
-            <q-img src="@/assets/CarouselPic/pic27.jpeg"/>
+            <q-img src="~/assets/CarouselPic/pic27.jpeg"/>
           </div>
           <div class="col-5 q-mx-auto q-px-md self-center text-3">
             <h4 class="q-mb-md">一個地方</h4>
@@ -30,7 +30,7 @@
         <div class="row">
           <div class="col-4 q-px-lg">
             <q-card class="my-card" flat>
-              <q-img src="@/assets/CarouselPic/pic6.jpeg" height="300px"/>
+              <q-img src="~/assets/CarouselPic/pic6.jpeg" height="300px"/>
               <q-card-section>
                 <div class="text-overline text-orange-9">Bartender</div>
                 <div class="text-h5 q-mt-sm q-mb-xs">阿宗
@@ -43,7 +43,7 @@
           </div>
           <div class="col-4 q-px-lg">
             <q-card class="my-card" flat>
-              <q-img src="@/assets/CarouselPic/pic7.jpeg" height="300px"/>
+              <q-img src="~/assets/CarouselPic/pic7.jpeg" height="300px"/>
               <q-card-section>
                 <div class="text-overline text-orange-9">Bartender</div>
                 <div class="text-h5 q-mt-sm q-mb-xs">勝揚</div>
@@ -55,7 +55,7 @@
           </div>
           <div class="col-4 q-px-lg">
             <q-card class="my-card" flat>
-              <q-img src="@/assets/CarouselPic/pic8.jpeg" height="300px"/>
+              <q-img src="~/assets/CarouselPic/pic8.jpeg" height="300px"/>
               <q-card-section>
                 <div class="text-overline text-orange-9">Bartender</div>
                 <div class="text-h5 q-mt-sm q-mb-xs">Allen</div>
@@ -94,7 +94,7 @@
       <div class="container">
         <div class="row items-center justify-between">
           <div class="col-md-6 q-px-md">
-            <q-img src="@/assets/CarouselPic/pic28.jpeg"/>
+            <q-img src="~/assets/CarouselPic/pic28.jpeg"/>
           </div>
           <div class="col-md-5 q-px-md">
             <p class="text-h4">

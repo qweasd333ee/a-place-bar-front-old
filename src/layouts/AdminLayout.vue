@@ -5,7 +5,7 @@
         <q-btn dense flat round icon="menu" @click="drawer = !drawer" />
         <q-toolbar-title>
           <a href="/">
-            <img src="@/assets/LogoPic/logo6.png" />
+            <img src="~/assets/LogoPic/logo6.png" />
           </a>
         </q-toolbar-title>
       </q-toolbar>

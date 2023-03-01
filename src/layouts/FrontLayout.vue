@@ -13,7 +13,7 @@
         </div>
         <q-toolbar-title class="col-md-2">
           <a href="/">
-            <img src="@/assets/LogoPic/logo6.png" />
+            <img src="~/assets/LogoPic/logo6.png" />
           </a>
         </q-toolbar-title>
         <div class="toolbar-right-link col-md-4 text-center" v-if="$q.screen.gt.sm">
@@ -91,7 +91,7 @@
       <div v-if="$q.screen.gt.xs" class="q-pa-md row justify-between footer">
         <div class="footerCol col-3 row">
           <div class="col-12 footerLogo">
-            <q-img src="@/assets/LogoPic/logo7.png" />
+            <q-img src="~/assets/LogoPic/logo7.png" />
           </div>
 
           <div class="col-12 footerIcons">
@@ -127,7 +127,7 @@
 <!-- iPhone -->
       <div v-if="$q.screen.lt.sm" class="q-pa-md row footer smallFooter">
         <div class="col-12 footerLogo">
-            <q-img src="@/assets/LogoPic/logo2.jpg" style="height: 50px; width: 50px;" />
+            <q-img src="~/assets/LogoPic/logo2.jpg" style="height: 50px; width: 50px;" />
         </div>
         <div class="col-12 footerIcons">
             <a href="https://www.instagram.com/a.place_bar/" target="_blank">

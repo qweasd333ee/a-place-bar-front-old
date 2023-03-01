@@ -1,6 +1,6 @@
-import router from '@/router/routes.js'
-import pinia from '@/stores/index.js'
-import { useUserStore } from '@/stores/users.js'
+import router from '../router/routes.js'
+import pinia from '../stores/index.js'
+import { useUserStore } from '~/stores/users.js'
 
 export async function registerPlugins (app) {
   app.use(pinia)
