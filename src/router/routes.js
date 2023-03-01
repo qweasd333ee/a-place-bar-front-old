@@ -66,7 +66,7 @@ const routes = [
       {
         path: 'about',
         name: 'about',
-        component: () => import('src/pages/front/AboutView.vue'),
+        component: () => import('pages/front/AboutView.vue'),
         meta: {
           title: '一個地方 | 關於我們',
           login: false,
@@ -76,7 +76,7 @@ const routes = [
       {
         path: 'contact',
         name: 'contact',
-        component: () => import('src/pages/front/ContactView.vue'),
+        component: () => import('pages/front/ContactView.vue'),
         meta: {
           title: '一個地方 | 關於我們',
           login: false,
